@@ -1,0 +1,27 @@
+.header {
+    background: map-get($colors, navLinkBackground);
+    height: 15vh;
+}
+ul {
+    height: 100%;
+    list-style: none;
+}
+li {
+    height: 100%;
+    width: 200px;
+    float:left;
+    padding: 35px 40px 35px 40px;
+    background: map-get($colors, navLinkBackground);
+    font-size: 25px;
+}
+.shadow {
+    -moz-box-shadow:    inset 0 0 20px map-get($colors, main);
+    -webkit-box-shadow: inset 0 0 20px map-get($colors, main);
+    box-shadow:         inset 0 0 20px map-get($colors, main);
+}
+
+a {
+    text-decoration: none;
+    color: map-get($colors, main);
+    text-transform: uppercase
+}

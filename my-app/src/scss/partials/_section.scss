@@ -1,0 +1,59 @@
+.home {
+    height: 80vh;
+    background: map-get($colors, eventBoxBackground);
+}
+
+// the first section
+.section {
+    height: 80vh;
+    display: flex;
+}
+
+.textTyper {
+    width: 25%;
+    height: 100%;
+    padding: 50px 30px 20px 30px;
+    background: map-get($colors, textTyperBackground);
+    color: map-get($colors, textTyperColor);
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.eventBox {
+    background: map-get($colors, eventBoxBackground);
+    width: 75%;
+    height: 100%;
+}
+
+.eventBox div:first-child {
+    height: 70%;
+    width: 100%;
+    font-size: 50px;
+    text-align: center;
+    line-height: 200px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.eventBox > div:last-child {
+    height: 30%;
+    width: 100%;
+    height: 150px;
+    overflow: auto;
+    vertical-align: bottom;
+    padding: 10px;
+    color: white;
+    background: map-get($colors, eventBoxBackground);
+    border-top: 2px solid map-get($colors, textTyperBackground);
+}
+
+
+// the second section
+.section2 {
+    height: 80vh;
+    background: lightgrey;
+}
+.section3 {
+    height: 80vh;
+    background: lightblue;
+}

@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+.window {
+  background: #0c181a;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #0c181a 0%, #112425 50%, #0f2123 52%, #183334 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #0c181a 0%, #112425 50%, #0f2123 52%, #183334 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #0c181a 0%, #112425 50%, #0f2123 52%, #183334 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0c181a', endColorstr='#183334',GradientType=0 );
+  /* IE6-9 */ }
+
+.container {
+  width: 1200px;
+  margin: 0 auto; }
+
+.header {
+  background: #2d2d2d;
+  height: 15vh; }
+
+ul {
+  height: 100%;
+  list-style: none; }
+
+li {
+  height: 100%;
+  width: 200px;
+  float: left;
+  padding: 35px 40px 35px 40px;
+  background: #2d2d2d;
+  font-size: 25px; }
+
+.shadow {
+  -moz-box-shadow: inset 0 0 20px #2d8282;
+  -webkit-box-shadow: inset 0 0 20px #2d8282;
+  box-shadow: inset 0 0 20px #2d8282; }
+
+a {
+  text-decoration: none;
+  color: #2d8282;
+  text-transform: uppercase; }
+
+.home {
+  height: 80vh;
+  background: #1e1e1e; }
+
+.section {
+  height: 80vh;
+  display: flex; }
+
+.textTyper {
+  width: 25%;
+  height: 100%;
+  padding: 50px 30px 20px 30px;
+  background: #282828;
+  color: #eec922;
+  font-size: 18px;
+  line-height: 25px; }
+
+.eventBox {
+  background: #1e1e1e;
+  width: 75%;
+  height: 100%; }
+
+.eventBox div:first-child {
+  height: 70%;
+  width: 100%;
+  font-size: 50px;
+  text-align: center;
+  line-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.eventBox > div:last-child {
+  height: 30%;
+  width: 100%;
+  height: 150px;
+  overflow: auto;
+  vertical-align: bottom;
+  padding: 10px;
+  color: white;
+  background: #1e1e1e;
+  border-top: 2px solid #282828; }
+
+.section2 {
+  height: 80vh;
+  background: lightgrey; }
+
+.section3 {
+  height: 80vh;
+  background: lightblue; }
+
+footer {
+  height: 5vh;
+  background: #0c181a;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #0c181a 0%, #112425 50%, #0f2123 52%, #183334 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #0c181a 0%, #112425 50%, #0f2123 52%, #183334 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #0c181a 0%, #112425 50%, #0f2123 52%, #183334 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0c181a', endColorstr='#183334',GradientType=0 );
+  /* IE6-9 */ }
