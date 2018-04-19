@@ -2,6 +2,7 @@ import React from 'react';
 import scss from '../scss/main.css';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atelierSavannaDark } from 'react-syntax-highlighter/styles/hljs';
+import SimpleScrollbar from 'simple-scrollbar';
 
 
 
@@ -12,9 +13,9 @@ class Section1 extends React.Component {
 
         return (
             <section className='container section'>
-                    <TextTyper  text={text}/>
+                    <TextTyper text={text}/>
                     <EventBox/>
-            </section>
+                    </section>
         )
     }
 }
