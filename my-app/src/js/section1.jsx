@@ -1,9 +1,13 @@
 import React from 'react';
 import scss from '../scss/main.css';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { atelierSavannaDark } from 'react-syntax-highlighter/styles/hljs';
+
+
 
 class Section1 extends React.Component {
     render(){
-
+        
         const text = '=> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
 
         return (
@@ -13,6 +17,33 @@ class Section1 extends React.Component {
             </section>
         )
     }
+}
+
+class TextBox extends React.Component {
+    render(){
+        const codeString = `import React from 'react';
+        import scss from '../scss/main.css';
+        import SyntaxHighlighter from 'react-syntax-highlighter';
+        import { atelierSavannaDark } from 'react-syntax-highlighter/styles/hljs';
+        
+        
+        
+        class Section1 extends React.Component {
+            render(){
+                
+                const text = '=> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+        
+                return (
+                    <section className='container section'>
+                            <TextTyper  text={text}/>
+                            <EventBox/>
+                    </section>
+                )
+            }
+        }`
+
+        return <SyntaxHighlighter language='javascript' style={atelierSavannaDark}>{codeString}</SyntaxHighlighter>;  
+    }   
 }
 
 class TextTyper extends React.Component {
@@ -51,6 +82,7 @@ class TextTyper extends React.Component {
         )
     }
 }
+
 
 
 class EventBox extends React.Component {
@@ -93,7 +125,7 @@ class EventBox extends React.Component {
     }
 
     render(){
-    
+
         const code = 'Pellentesque facilisis. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, luctus et interdum adipiscing wisi. Aliquam erat ac ipsum. Integer aliquam purus. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, luctus et interdum adipiscing wisi. Aliquam erat ac ipsum. Integer aliquam purus. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, luctus et interdum adipiscing wisi. Aliquam erat ac ipsum. Integer aliquam purus. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, luctus et interdum adipiscing wisi. Aliquam erat ac ipsum. Integer aliquam purus. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, luctus et interdum adipiscing wisi. Aliquam erat ac ipsum. Integer aliquam purus. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, luctus et interdum adipiscing wisi. Aliquam erat ac ipsum. Integer aliquam purus. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, luctus et interdum adipiscing wisi. Aliquam erat ac ipsum. Integer aliquam purus.  '
 
         return (
@@ -109,7 +141,8 @@ class EventBox extends React.Component {
                     {this.state.buttonText}
                     </div>
                 </div>
-                <div>{code}
+                <div>
+                    <TextBox/>
                 </div>
             </div>
             
@@ -118,3 +151,5 @@ class EventBox extends React.Component {
 }
 
 export default Section1;
+
+

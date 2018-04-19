@@ -13,9 +13,6 @@ import Section2 from './section2';
 import Section3 from './section3';
 import Footer from './footer.jsx'; 
 
-
-
-
 class App extends React.Component{
     render(){
         return (
