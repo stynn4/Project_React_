@@ -70,7 +70,7 @@ a {
   height: 100%;
   padding: 50px 30px 20px 30px;
   background: #282828;
-  color: #eec922;
+  color: #c09f0b;
   font-size: 18px;
   line-height: 25px; }
 
@@ -93,12 +93,48 @@ a {
   height: 30%;
   width: 100%;
   height: 150px;
-  overflow: auto;
   vertical-align: bottom;
   padding: 10px;
   color: white;
   background: #1e1e1e;
-  border-top: 2px solid #282828; }
+  border-top: 2px solid #282828;
+  overflow-Y: auto; }
+
+.box-1 {
+  background: #ca9f14;
+  padding: 20px;
+  border: 2px solid #1e1e1e; }
+
+.box-2 {
+  background: #328782;
+  padding: 20px;
+  border: 2px solid #1e1e1e; }
+
+.box-3 {
+  background: #641e1e;
+  padding: 20px;
+  border: 2px solid #1e1e1e; }
+
+.box-4 {
+  background: #2b346b;
+  padding: 20px;
+  border: 2px solid #1e1e1e; }
+
+.box-5 {
+  background: #532042;
+  padding: 20px;
+  border: 2px solid #1e1e1e; }
+
+.box-6 {
+  background: #0a5234;
+  padding: 20px;
+  border: 2px solid #1e1e1e; }
+
+SyntaxHighlighter {
+  position: relative !important;
+  width: 100% !important;
+  overflow-y: visible !important;
+  overflow-x: visible !important; }
 
 .section2 {
   height: 80vh;
@@ -107,10 +143,6 @@ a {
 .section3 {
   height: 80vh;
   background: lightblue; }
-
-.toRemove {
-  height: 100px;
-  width: 50px; }
 
 footer {
   height: 5vh;

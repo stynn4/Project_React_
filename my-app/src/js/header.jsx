@@ -9,7 +9,7 @@ class Header extends React.Component {
         const activeStyle = {
             fontWeight: 'bold',
             textDecoration: 'none',
-            color: 'rgb(45, 130, 130)'
+            color: 'rgb(192, 159, 11)'
         }
         return (
             <nav className='header'>

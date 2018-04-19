@@ -2,7 +2,7 @@ import React from 'react';
 import scss from '../scss/main.css';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atelierSavannaDark } from 'react-syntax-highlighter/styles/hljs';
-import SimpleScrollbar from 'simple-scrollbar';
+import { Scrollbars } from 'react-custom-scrollbars';
 
 
 
@@ -13,9 +13,9 @@ class Section1 extends React.Component {
 
         return (
             <section className='container section'>
-                    <TextTyper text={text}/>
-                    <EventBox/>
-                    </section>
+                <TextTyper text={text}/>
+                <EventBox/>
+            </section>
         )
     }
 }
@@ -91,10 +91,7 @@ class EventBox extends React.Component {
         super(props)
 
         this.default = {
-            backgroundColor: 'rgb(70, 70, 70)',
-            border: '3px dotted rgb(120, 250, 220)',
-            width: '350px',
-            height: '200px',
+            backgroundColor: '',
             buttonText: 'Button'
         }
 
@@ -103,16 +100,13 @@ class EventBox extends React.Component {
 
     mouseEnter = () => {
         this.setState({
-            backgroundColor: 'rgb(100, 100, 100)',
-            border: '5px dashed rgb(120, 120, 170',
-            buttonText: 'onMouseEnter'
+            backgroundColor: 'rgb(40, 40, 40)'
         })
     }
 
     mouseLeave = () => {
         this.setState({
-            ...this.default,
-            buttonText: 'onMouseLeave'
+            ...this.default
 
         })
     }
@@ -127,23 +121,28 @@ class EventBox extends React.Component {
 
     render(){
 
-        const code = 'Pellentesque facilisis. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, luctus et interdum adipiscing wisi. Aliquam erat ac ipsum. Integer aliquam purus. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, luctus et interdum adipiscing wisi. Aliquam erat ac ipsum. Integer aliquam purus. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, luctus et interdum adipiscing wisi. Aliquam erat ac ipsum. Integer aliquam purus. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, luctus et interdum adipiscing wisi. Aliquam erat ac ipsum. Integer aliquam purus. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, luctus et interdum adipiscing wisi. Aliquam erat ac ipsum. Integer aliquam purus. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, luctus et interdum adipiscing wisi. Aliquam erat ac ipsum. Integer aliquam purus. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, luctus et interdum adipiscing wisi. Aliquam erat ac ipsum. Integer aliquam purus.  '
-
         return (
             
             <div className='eventBox'>
-                <div>
-                    <div className='event' 
-                    style={{...this.state}}
-                    onMouseEnter={this.mouseEnter} 
-                    onMouseLeave={this.mouseLeave}
-                    onClick={this.click}
-                    onDoubleClick={this.dblClick}>
-                    {this.state.buttonText}
+                <div className='nestedBoxes'>
+                    <div onMouseEnter={this.mouseEnter} 
+                    onMouseLeave={this.mouseLeave} 
+                    className='box-1'>
+                        <div className='box-2'>
+                            <div className='box-3'>
+                                <div className='box-4'>
+                                    <div className='box-5'>
+                                        <div className='box-6'>
+                                            {this.state.buttonText}
+                                        </div>                                    
+                                    </div>    
+                                </div>    
+                            </div>    
+                        </div>
                     </div>
                 </div>
                 <div>
-                    <TextBox/>
+                    <TextBox/>   
                 </div>
             </div>
             
@@ -152,5 +151,7 @@ class EventBox extends React.Component {
 }
 
 export default Section1;
+
+           
 
 
