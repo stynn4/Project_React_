@@ -4,7 +4,6 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atelierSavannaDark } from 'react-syntax-highlighter/styles/hljs';
 import { Scrollbars } from 'react-custom-scrollbars';
 
-
 class Section3 extends React.Component {
     render(){
 
@@ -131,6 +130,43 @@ class EventBox extends React.Component {
         )
     }
 }
+/*
+class ApiBox extends React.Component {
 
+    constructor(props){
+        super(props)
+
+        this.state = {
+            loading: false
+        }
+    }
+
+    componentDidMount(){
+        
+        fetch(`https://api.nasa.gov/planetary/apod?api_key=${this.props.key}`).then(response => {
+            return response.json()
+        }).then(data => {
+            console.log(data)
+            
+            // data wynik zwrotu z serwera przeobionego na obiekt
+            this.setState({
+                data:data
+                //aktualizacja stanu
+            }).catch(err => {
+                console.log(err)
+            })
+        })
+    }
+
+    render(){
+        // musi byc warunek, czy mamy juz te dane
+        if(this.state.data === false){
+            return <h1>pobieram dane ...</h1>
+        } else {
+            return <div>{this.state.data}</div>
+        }
+     }
+}
+*/
 
 export default Section3;

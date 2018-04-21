@@ -4,18 +4,26 @@
     background: map-get($colors, eventBoxBackground);
 }
 
+.home > p {
+    font-size: 120px;
+    text-transform: uppercase;
+    color: map-get($colors, main);
+    margin-left: 50px;
+    padding-top: 150px;
+}
 .underline {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 500px;
-    border: 1px solid lightblue;
+    width: 1000px;
+    margin-left: 50px;
 }
 
 .underline div {
-    background: gray;
-    width: 50px;
-    height: 50px;
+    width: 600px;
+    height: 10px;
+    margin-right: 5px;
+    @include shadowEffect;
 }
 
 // the first section
@@ -59,7 +67,7 @@
     color: white;
     background: map-get($colors, eventBoxBackground);
     border-top: 2px solid map-get($colors, textTyperBackground);
-    overflow-Y: auto;
+    overflow: auto;
 }
 
 $widths: (
@@ -82,14 +90,14 @@ $widthList: map-values($widths);
         border: 2px solid rgb(30, 30, 30);
     }
 }
-
+/*
 SyntaxHighlighter {
     position: relative !important;
     width: 100% !important;
     overflow-y: visible !important;
     overflow-x: visible !important;
 }
-
+*/
 // the second section
 .section2 {
     height: 80vh;

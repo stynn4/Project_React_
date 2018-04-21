@@ -3,45 +3,181 @@ import scss from '../scss/main.css';
 
 
 
-
-
 class Underline extends React.Component {
 
     constructor(props){
         super(props)
 
         this.state = {
-            borderBottom: 'rgb(100, 30, 30)' 
+            line: 1
         }
     }
 
     componentDidMount(){
 
-        this.firstLine = setTimeout(() => {
+        this.firstLine = setTimeout(()=>{
             this.setState({
-                borderBottom: '5px solid rgb(100, 30, 30)'
+                line: 1
             })
         }, this.props.firstLineTime * 1000)
 
-        this.secondLine = setTimeout(() => {
+        this.secondLine = setTimeout(()=>{
             this.setState({
-                borderBottom: '5px solid rgb(100, 30, 30)'
+                line: 2
             })
-        }, (this.props.firstLineTime + this.props.secondLineTime) * 1000)
-        
+        }, (this.props.secondLineTime) * 1000)
+
+        this.thirdLine = setTimeout(()=>{
+            this.setState({
+                line:3
+            })
+        }, this.props.thirdLineTime * 1000)
+
+        this.fourthLine = setTimeout(()=>{
+            this.setState({
+                line:4
+            })
+        }, this.props.fourthLineTime * 1000)
+
+        this.fifthLine = setTimeout(()=>{
+            this.setState({
+                line: 5
+            })
+        }, this.props.fifthLineTime * 1000)
+
+        this.sixthLine = setTimeout(()=>{
+            this.setState({
+                line: 6
+            })
+        }, this.props.sixthLineTime * 1000)
+
     }
 
     render(){
-        
+
+        let firstLine = {
+            borderBottom: ''
+        }
+        if(this.state.line === 1){
+            firstLine = {
+                borderBottom: this.props.border
+            }
+        }
+        let secondLine = {
+            borderBottom: ''
+        }
+        if(this.state.line === 2){
+
+            firstLine = {
+                borderBottom: this.props.border
+            }
+            secondLine = {
+                borderBottom: this.props.border
+            }
+        }
+
+        let thirdLine = {
+            borderBottom: ''
+        }
+        if(this.state.line === 3){
+
+            firstLine = {
+                borderBottom: this.props.border
+            }
+            secondLine = {
+                borderBottom: this.props.border
+            }
+            thirdLine = {
+                borderBottom: this.props.border
+            }
+        }
+
+        let fourthLine = {
+            borderBottom: ''
+        }
+        if(this.state.line === 4){
+
+            firstLine = {
+                borderBottom: this.props.border
+            }
+            secondLine = {
+                borderBottom: this.props.border
+            }
+            thirdLine = {
+                borderBottom: this.props.border
+            }
+            fourthLine = {
+                borderBottom: this.props.border
+            }
+        }
+
+        let fifthLine = {
+            borderBottom: ''
+        }
+        if(this.state.line === 5){
+
+            firstLine = {
+                borderBottom: this.props.border
+            }
+            secondLine = {
+                borderBottom: this.props.border
+            }
+            thirdLine = {
+                borderBottom: this.props.border
+            }
+            fourthLine = {
+                borderBottom: this.props.border
+            }
+            fifthLine = {
+                borderBottom: this.props.border
+            }
+        }
+
+        let sixthLine = {
+            borderBottom: ''
+        }
+        if(this.state.line === 6){
+
+            firstLine = {
+                borderBottom: this.props.border
+            }
+            secondLine = {
+                borderBottom: this.props.border
+            }
+            thirdLine = {
+                borderBottom: this.props.border
+            }
+            fourthLine = {
+                borderBottom: this.props.border
+            }
+            fifthLine = {
+                borderBottom: this.props.border
+            }
+            sixthLine = {
+                borderBottom: this.props.border
+            }
+
+        }
+
+        const divStyles = [{firstLine}, 'secondLine', 'thirdLine', 'fourthLine', 'fifthLine', 'sixthLine']
         return (
             <div className='underline'>
-                    <div style={{borderBottom: this.state.borderBottom}}>1</div>
-                    <div>2</div>
-                    <div>3</div>
-                    <div>4</div>
-                    <div>5</div>
-                    <div>6</div>
+            {
+                divStyles.map((style) => {
+                    <div style={style}/>
+                })
+            }
             </div>
+            /*
+            <div className='underline'>
+                    <div style={firstLine}/>
+                    <div style={secondLine}/>
+                    <div style={thirdLine}/>
+                    <div style={fourthLine}></div>
+                    <div style={fifthLine}></div>
+                    <div style={sixthLine}></div>
+            </div>
+            */
         )
     }
 }
@@ -50,13 +186,14 @@ class Home extends React.Component {
     render(){
         return (
             <div className='container home'>
-                <h1>Home</h1>
+                <p>Home</p>
                 <Underline firstLineTime={1} 
-                secondLineTime={2} 
-                thirdLineTime={1} 
-                fourthTimeLine={1}
-                fifthLineTime={1}
-                sixthLineTime={1}
+                border={'10px solid rgb(45, 130, 130)'}
+                secondLineTime={1.5} 
+                thirdLineTime={2.0} 
+                fourthLineTime={2.5}
+                fifthLineTime={2.9}
+                sixthLineTime={3.1}
                 />
             </div>
         )

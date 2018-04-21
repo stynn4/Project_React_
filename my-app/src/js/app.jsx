@@ -36,7 +36,7 @@ class Content extends React.Component {
                 <Route exact path='/' component={Home}/>
                 <Route path='/Section1' component={Section1}/>
                 <Route path='/Section2' component={Section2}/>
-                <Route path='/Section3' component={Section3} />
+                <Route path='/Section3' component={Section3}/>
             </div>
         )
     }
