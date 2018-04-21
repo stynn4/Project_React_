@@ -83,44 +83,14 @@ class TextTyper extends React.Component {
 }
 
 class EventBox extends React.Component {
-    constructor(props){
-        super(props)
-
-        this.default = {
-            backgroundColor: '',
-            buttonText: 'Button'
-        }
-
-        this.state = {...this.default}
-    }
-
-    mouseEnter = () => {
-        this.setState({
-            backgroundColor: 'rgb(40, 40, 40)'
-        })
-    }
-
-    mouseLeave = () => {
-        this.setState({
-            ...this.default
-
-        })
-    }
-
-    click = () => {
-        this.setState({
-            backgroundColor: 'orange',
-            border: '3px double rbg(100, 100, 100)',
-            buttonText: 'onClick'
-        })
-    }
-
+    //key HcI9D0bdacVk9icon6WnwhapN5GAhXM28Rx9YuH3
     render(){
 
         return (
             
             <div className='eventBox'>
                 <div>
+                    <ApiBox key="HcI9D0bdacVk9icon6WnwhapN5GAhXM28Rx9YuH3"/>
                 </div>
                 <div>
                     <TextBox/>   
@@ -130,43 +100,43 @@ class EventBox extends React.Component {
         )
     }
 }
-/*
-class ApiBox extends React.Component {
 
+class ApiBox extends React.Component {
     constructor(props){
         super(props)
 
         this.state = {
-            loading: false
+            data: false
         }
     }
-
+ 
     componentDidMount(){
         
-        fetch(`https://api.nasa.gov/planetary/apod?api_key=${this.props.key}`).then(response => {
+        fetch(`https://api.nasa.gov/planetary/apod?api_key=HcI9D0bdacVk9icon6WnwhapN5GAhXM28Rx9YuH3`).then(response => {
             return response.json()
         }).then(data => {
             console.log(data)
             
-            // data wynik zwrotu z serwera przeobionego na obiekt
             this.setState({
                 data:data
-                //aktualizacja stanu
-            }).catch(err => {
+            })/*.catch(err => {
                 console.log(err)
-            })
+            })*/
         })
     }
 
     render(){
-        // musi byc warunek, czy mamy juz te dane
         if(this.state.data === false){
             return <h1>pobieram dane ...</h1>
         } else {
-            return <div>{this.state.data}</div>
+            return <div style={{fontSize: '15px', lineHeight: '15px'}}>
+            {this.state.data.map((item, index)=>{
+                return <p>{item}</p>
+            })}
+            </div>
         }
-     }
-}
-*/
+    }
+}     
+
 
 export default Section3;

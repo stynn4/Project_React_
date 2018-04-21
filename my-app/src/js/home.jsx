@@ -158,17 +158,8 @@ class Underline extends React.Component {
             }
 
         }
-
-        const divStyles = [{firstLine}, 'secondLine', 'thirdLine', 'fourthLine', 'fifthLine', 'sixthLine']
         return (
-            <div className='underline'>
-            {
-                divStyles.map((style) => {
-                    <div style={style}/>
-                })
-            }
-            </div>
-            /*
+        
             <div className='underline'>
                     <div style={firstLine}/>
                     <div style={secondLine}/>
@@ -177,10 +168,11 @@ class Underline extends React.Component {
                     <div style={fifthLine}></div>
                     <div style={sixthLine}></div>
             </div>
-            */
+          
         )
     }
 }
+
 
 class Home extends React.Component {
     render(){
