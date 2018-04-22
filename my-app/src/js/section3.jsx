@@ -135,9 +135,11 @@ class ApiBox extends React.Component {
                 <div className='apiBox'>
                     <p>Tytuł zdjęcia: {this.state.data.title}</p>
                     <div>
-                        <img src={this.state.data.url} alt='nasaImageOfTheDay'/>
-                        <p>Zdjęcie dnia: {this.state.data.date}</p>
-                        <p>Copyright: {this.state.data.copyright}</p>
+                        <a href={this.state.data.url}><img src={this.state.data.url} alt='nasaImageOfTheDay'/></a>
+                        <h4>Zdjęcie dnia: </h4>
+                        <p>{this.state.data.date}</p>
+                        <h4>Copyright: </h4>
+                        <p>{this.state.data.copyright}</p>
                     </div>
                     <div>
                         <h4>Opis: </h4>

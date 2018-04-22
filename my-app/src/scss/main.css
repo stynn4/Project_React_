@@ -215,40 +215,44 @@ SyntaxHighlighter {
 
 .section3 .apiBox {
   height: 100%;
-  border: 1px solid yellow;
   padding: 10px; }
 
 .section3 .apiBox > p {
   margin: 10px 0 10px 0;
   font-size: 25px;
   color: #2d8282;
-  font-weight: bold;
-  border: 1px solid red; }
+  font-weight: bold; }
 
 .section3 .apiBox > div {
   width: 50%;
   height: 85%;
-  border: 2px solid red;
-  float: left; }
+  float: left;
+  padding: 10px; }
 
-.section3 .apiBox img {
-  width: 150px;
-  height: 150px; }
+.section3 .apiBox > div:nth-child(2) h4 {
+  margin-top: 10px;
+  color: #2d8282; }
 
-.section3 .apiBox div:first-child p {
+.section3 .apiBox > div:nth-child(2) p {
   font-size: 17px;
   margin-top: 15px;
   color: #e3f0f5; }
 
+.section3 .apiBox > div:nth-child(2) img {
+  width: 240px;
+  height: 150px;
+  box-shadow: 0 0 7px #2d8282; }
+
 .section3 .apiBox > div:last-child {
-  border: 1px solid #2d8282; }
+  box-shadow: 0 0 7px #2d8282; }
 
 .section3 .apiBox div:last-child h4 {
-  color: #2d8282;
-  padding: 10px; }
+  color: #2d8282; }
 
 .section3 .apiBox div:last-child p {
-  padding: 10px; }
+  color: #e3f0f5;
+  padding: 15px 15px 0 0;
+  line-height: 22px; }
 
 footer {
   height: 5vh;

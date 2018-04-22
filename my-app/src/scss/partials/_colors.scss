@@ -8,6 +8,7 @@ $colors: (
     text: rgb(227, 240, 245),
     text1: rgb(252, 167, 167)
 );
+
 $colorsBoxes: (
     color1: rgb(202, 159, 20),
     color2: rgb(50, 135, 130),
@@ -15,6 +16,19 @@ $colorsBoxes: (
     color4: rgb(43, 52, 107),
     color5: rgb(83, 32, 66),
     color6: rgb(10, 82, 52)
-)
+);
+
+@mixin gradient()
+{
+    height: 5vh;
+    background: rgb(12,24,26); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(12,24,26,1) 0%, rgba(17,36,37,1) 50%, rgba(15,33,35,1) 52%, rgba(24,51,52,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(12,24,26,1) 0%,rgba(17,36,37,1) 50%,rgba(15,33,35,1) 52%,rgba(24,51,52,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(12,24,26,1) 0%,rgba(17,36,37,1) 50%,rgba(15,33,35,1) 52%,rgba(24,51,52,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0c181a', endColorstr='#183334',GradientType=0 ); /* IE6-9 */
+
+}
+    
+
 
 

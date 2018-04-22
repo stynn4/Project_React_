@@ -1,8 +1,3 @@
 footer {
-    height: 5vh;
-    background: rgb(12,24,26); /* Old browsers */
-background: -moz-linear-gradient(top, rgba(12,24,26,1) 0%, rgba(17,36,37,1) 50%, rgba(15,33,35,1) 52%, rgba(24,51,52,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, rgba(12,24,26,1) 0%,rgba(17,36,37,1) 50%,rgba(15,33,35,1) 52%,rgba(24,51,52,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom, rgba(12,24,26,1) 0%,rgba(17,36,37,1) 50%,rgba(15,33,35,1) 52%,rgba(24,51,52,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0c181a', endColorstr='#183334',GradientType=0 ); /* IE6-9 */
+    @include gradient;    
 }
