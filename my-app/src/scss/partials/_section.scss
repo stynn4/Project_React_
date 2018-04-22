@@ -26,48 +26,28 @@
     @include shadowEffect;
 }
 
+
 // the first section
-.section {
-    height: 80vh;
-    display: flex;
+.section1 {
+    @include section;
+}
+.section1 .textTyper {
+    @include textTyper;
 }
 
-.textTyper {
-    width: 25%;
-    height: 100%;
-    padding: 50px 30px 20px 30px;
-    background: map-get($colors, textTyperBackground);
-    color: map-get($colors, textTyperColor);
-    font-size: 18px;
-    line-height: 25px;
+.section1 .eventBox {
+    @include eventBox;
 }
 
-.eventBox {
-    background: map-get($colors, eventBoxBackground);
-    width: 75%;
-    height: 100%;
-}
-
-.eventBox div:first-child {
-    height: 70%;
-    width: 100%;
-    font-size: 50px;
-    text-align: center;
-    line-height: 200px; 
+.section1 .react {
+    @include react;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.eventBox > div:last-child {
-    height: 30%;
-    width: 100%;
-    height: 150px;
-    vertical-align: bottom;
-    padding: 10px;
-    color: white;
-    background: map-get($colors, eventBoxBackground);
-    border-top: 2px solid map-get($colors, textTyperBackground);
-    overflow: auto;
+
+.section1 .codeBox {
+    @include codeBox;
 }
 
 $widths: (
@@ -98,13 +78,96 @@ SyntaxHighlighter {
     overflow-x: visible !important;
 }
 */
+
+
 // the second section
 .section2 {
+    @include section;
     height: 80vh;
     background: lightgrey;
 }
-.section3 {
-    height: 80vh;
-    background: lightblue;
+
+.section2 .textTyper {
+    @include textTyper;
 }
+
+.section2 .eventBox {
+    @include eventBox;
+}
+
+.section2 .react {
+    @include react;
+}
+
+.section2 .codeBox {
+    @include codeBox;
+}
+
+
+//the third section
+.section3{
+    @include section;
+}
+
+.section3 .textTyper {
+    @include textTyper;
+}
+
+.section3 .eventBox {
+    @include eventBox;
+}
+
+.section3 .react {
+    @include react;
+}
+
+.section3 .codeBox {
+    @include codeBox;
+}
+
+.section3 .apiBox {
+    height: 100%;
+    border: 1px solid yellow;
+    padding: 10px;
+}
+
+.section3 .apiBox > p {
+    margin: 10px 0 10px 0;
+    font-size: 25px;
+    color: map-get($colors, main);
+    font-weight: bold;
+    border: 1px solid red;
+}
+
+.section3 .apiBox > div {
+    width: 50%;
+    height: 85%;
+    border: 2px solid red;
+    float: left;
+}
+
+.section3 .apiBox img {
+    width: 150px;
+    height: 150px;
+}
+
+.section3 .apiBox div:first-child p {
+    font-size: 17px;
+    margin-top: 15px;
+    color: map-get($colors, text);
+}
+
+.section3 .apiBox > div:last-child {
+    border: 1px solid map-get($colors, main);
+}
+
+.section3 .apiBox div:last-child h4 {
+    color: map-get($colors, main);
+    padding: 10px;
+}
+
+.section3 .apiBox div:last-child p {
+    padding: 10px;
+} 
+
 

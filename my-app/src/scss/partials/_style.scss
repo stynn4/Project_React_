@@ -30,4 +30,48 @@
   box-shadow:         inset 0 0 10px map-get($colors, main);
 }
 
+// home and sections
+
+@mixin section()
+{
+  height: 80vh;
+  display: flex;
+}
+
+@mixin textTyper()
+{
+  width: 25%;
+  height: 100%;
+  padding: 50px 30px 20px 30px;
+  background: map-get($colors, textTyperBackground);
+  color: map-get($colors, textTyperColor);
+  font-size: 18px;
+  line-height: 25px;
+}
+
+@mixin eventBox() 
+{
+  background: map-get($colors, eventBoxBackground);
+  width: 75%;
+  height: 100%;
+}
+
+@mixin codeBox()
+{
+  height: 30%;
+  width: 100%;
+  height: 150px;
+  vertical-align: bottom;
+  padding: 10px;
+  color: white;
+  background: map-get($colors, eventBoxBackground);
+  border-top: 2px solid map-get($colors, textTyperBackground);
+  overflow: auto;
+}
+
+@mixin react()
+{
+  height: 70%;
+  width: 100%;
+}
 

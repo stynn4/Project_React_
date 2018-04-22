@@ -11,7 +11,7 @@ class Section2 extends React.Component {
         const text = 'to jest tekst texttyper'
 
         return (
-            <section className='container section'>
+            <section className='container section2'>
                     <TextTyper  text={text}/>
                     <EventBox/>
             </section>
@@ -19,7 +19,7 @@ class Section2 extends React.Component {
     }
 }
 
-class TextBox extends React.Component {
+class CodeBox extends React.Component {
     render(){
         const codeString = `import React from 'react';
         import scss from '../scss/main.css';
@@ -87,10 +87,10 @@ class EventBox extends React.Component {
     render(){
         return (
             <div className='eventBox'>
-                <div>
+                <div className='react'>
                 </div>
-                <div>
-                    <TextBox/>   
+                <div className='codeBox'>
+                    <CodeBox/>   
                 </div>
             </div>
         )

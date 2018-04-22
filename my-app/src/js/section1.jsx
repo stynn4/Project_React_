@@ -12,7 +12,7 @@ class Section1 extends React.Component {
         const text = '=> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
 
         return (
-            <section className='container section'>
+            <section className='container section1'>
                 <TextTyper text={text}/>
                 <EventBox/>
             </section>
@@ -20,7 +20,7 @@ class Section1 extends React.Component {
     }
 }
 
-class TextBox extends React.Component {
+class CodeBox extends React.Component {
     render(){
         const codeString = `import React from 'react';
         import scss from '../scss/main.css';
@@ -124,7 +124,7 @@ class EventBox extends React.Component {
         return (
             
             <div className='eventBox'>
-                <div className='nestedBoxes'>
+                <div className='react'>
                     <div onMouseEnter={this.mouseEnter} 
                     onMouseLeave={this.mouseLeave} 
                     className='box-1'>
@@ -141,8 +141,8 @@ class EventBox extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div>
-                    <TextBox/>   
+                <div className='codeBox'>
+                    <CodeBox/>   
                 </div>
             </div>
             

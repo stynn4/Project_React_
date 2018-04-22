@@ -10,7 +10,7 @@ class Section3 extends React.Component {
         const text = 'to jest tekst texttyper'
 
         return (
-            <section className='container section'>
+            <section className='container section3'>
                     <TextTyper  text={text}/>
                     <EventBox/>
             </section>
@@ -18,7 +18,7 @@ class Section3 extends React.Component {
     }
 }
 
-class TextBox extends React.Component {
+class CodeBox extends React.Component {
     render(){
         const codeString = `import React from 'react';
         import scss from '../scss/main.css';
@@ -89,13 +89,13 @@ class EventBox extends React.Component {
         return (
             
             <div className='eventBox'>
-                <div>
+                <div className='react'>
                     <ApiBox key="HcI9D0bdacVk9icon6WnwhapN5GAhXM28Rx9YuH3"/>
                 </div>
-                <div>
-                    <TextBox/>   
+                <div className='codeBox'>
+                    <CodeBox/>   
                 </div>
-            </div>
+            </div> 
             
         )
     }
@@ -126,14 +126,27 @@ class ApiBox extends React.Component {
     }
 
     render(){
+        const {data}= this.state 
+
         if(this.state.data === false){
             return <h1>pobieram dane ...</h1>
         } else {
-            return <div style={{fontSize: '15px', lineHeight: '15px'}}>
-            {this.state.data.map((item, index)=>{
-                return <p>{item}</p>
-            })}
-            </div>
+            return (
+                <div className='apiBox'>
+                    <p>Tytuł zdjęcia: {this.state.data.title}</p>
+                    <div>
+                        <img src={this.state.data.url} alt='nasaImageOfTheDay'/>
+                        <p>Zdjęcie dnia: {this.state.data.date}</p>
+                        <p>Copyright: {this.state.data.copyright}</p>
+                    </div>
+                    <div>
+                        <h4>Opis: </h4>
+                        <Scrollbars style={{height: 255}}>
+                            <p>{this.state.data.explanation}</p>
+                        </Scrollbars>
+                    </div>
+                </div>
+		    )         
         }
     }
 }     

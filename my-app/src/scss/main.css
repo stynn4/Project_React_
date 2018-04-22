@@ -71,11 +71,11 @@ a {
   -webkit-box-shadow: inset 0 0 10px #2d8282;
   box-shadow: inset 0 0 10px #2d8282; }
 
-.section {
+.section1 {
   height: 80vh;
   display: flex; }
 
-.textTyper {
+.section1 .textTyper {
   width: 25%;
   height: 100%;
   padding: 50px 30px 20px 30px;
@@ -84,22 +84,19 @@ a {
   font-size: 18px;
   line-height: 25px; }
 
-.eventBox {
+.section1 .eventBox {
   background: #1e1e1e;
   width: 75%;
   height: 100%; }
 
-.eventBox div:first-child {
+.section1 .react {
   height: 70%;
   width: 100%;
-  font-size: 50px;
-  text-align: center;
-  line-height: 200px;
   display: flex;
   justify-content: center;
   align-items: center; }
 
-.eventBox > div:last-child {
+.section1 .codeBox {
   height: 30%;
   width: 100%;
   height: 150px;
@@ -150,11 +147,108 @@ SyntaxHighlighter {
 */
 .section2 {
   height: 80vh;
+  display: flex;
+  height: 80vh;
   background: lightgrey; }
+
+.section2 .textTyper {
+  width: 25%;
+  height: 100%;
+  padding: 50px 30px 20px 30px;
+  background: #282828;
+  color: #c09f0b;
+  font-size: 18px;
+  line-height: 25px; }
+
+.section2 .eventBox {
+  background: #1e1e1e;
+  width: 75%;
+  height: 100%; }
+
+.section2 .react {
+  height: 70%;
+  width: 100%; }
+
+.section2 .codeBox {
+  height: 30%;
+  width: 100%;
+  height: 150px;
+  vertical-align: bottom;
+  padding: 10px;
+  color: white;
+  background: #1e1e1e;
+  border-top: 2px solid #282828;
+  overflow: auto; }
 
 .section3 {
   height: 80vh;
-  background: lightblue; }
+  display: flex; }
+
+.section3 .textTyper {
+  width: 25%;
+  height: 100%;
+  padding: 50px 30px 20px 30px;
+  background: #282828;
+  color: #c09f0b;
+  font-size: 18px;
+  line-height: 25px; }
+
+.section3 .eventBox {
+  background: #1e1e1e;
+  width: 75%;
+  height: 100%; }
+
+.section3 .react {
+  height: 70%;
+  width: 100%; }
+
+.section3 .codeBox {
+  height: 30%;
+  width: 100%;
+  height: 150px;
+  vertical-align: bottom;
+  padding: 10px;
+  color: white;
+  background: #1e1e1e;
+  border-top: 2px solid #282828;
+  overflow: auto; }
+
+.section3 .apiBox {
+  height: 100%;
+  border: 1px solid yellow;
+  padding: 10px; }
+
+.section3 .apiBox > p {
+  margin: 10px 0 10px 0;
+  font-size: 25px;
+  color: #2d8282;
+  font-weight: bold;
+  border: 1px solid red; }
+
+.section3 .apiBox > div {
+  width: 50%;
+  height: 85%;
+  border: 2px solid red;
+  float: left; }
+
+.section3 .apiBox img {
+  width: 150px;
+  height: 150px; }
+
+.section3 .apiBox div:first-child p {
+  font-size: 17px;
+  margin-top: 15px;
+  color: #e3f0f5; }
+
+.section3 .apiBox > div:last-child {
+  border: 1px solid #2d8282; }
+
+.section3 .apiBox div:last-child h4 {
+  color: #2d8282;
+  padding: 10px; }
+
+.section3 .apiBox div:last-child p {
+  padding: 10px; }
 
 footer {
   height: 5vh;
