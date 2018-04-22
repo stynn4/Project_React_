@@ -151,14 +151,15 @@ SyntaxHighlighter {
 
 .section3 .apiBox > div:nth-child(2) p {
     font-size: 17px;
-    margin-top: 15px;
+    margin-top: 1px;
     color: map-get($colors, text);
+    padding: 5px;
 }
 
 .section3 .apiBox > div:nth-child(2) img {
     width: 240px;
     height: 150px;
-    box-shadow: 0 0 7px map-get($colors, main);
+    box-shadow: 0 0 5px map-get($colors, main);
 }
 
 .section3 .apiBox > div:last-child {
@@ -167,6 +168,7 @@ SyntaxHighlighter {
 
 .section3 .apiBox div:last-child h4 {
     color: map-get($colors, main);
+    margin-bottom: 10px;
 }
 
 .section3 .apiBox div:last-child p {

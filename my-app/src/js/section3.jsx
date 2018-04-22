@@ -125,22 +125,44 @@ class ApiBox extends React.Component {
         })
     }
 
+    mouseEnter = () => {
+        this.setState({
+            text: 'powiększ zdjęcie',
+            color: 'rgb(192, 159, 11)',
+            textTransform: 'uppercase'
+        })
+    }
+
+    mouseLeave = () => {
+        this.setState({
+            text: '',
+            color: ''
+        })
+    }
+        
+
     render(){
-        const {data}= this.state 
+
+        
 
         if(this.state.data === false){
-            return <h1>pobieram dane ...</h1>
+            return <h1 style={{color: 'rgba(45, 130, 130, 0.5)'}}>pobieram dane ...</h1>
         } else {
             return (
                 <div className='apiBox'>
                     <p>Tytuł zdjęcia: {this.state.data.title}</p>
                     <div>
-                        <a href={this.state.data.url}><img src={this.state.data.url} alt='nasaImageOfTheDay'/></a>
+                        <a href={this.state.data.url}
+                        onMouseEnter={this.mouseEnter} 
+                        onMouseLeave={this.mouseLeave}>
+                            <img src={this.state.data.url} alt='nasaImageOfTheDay'/>
+                        </a>
+                        <p style={this.state}>{this.state.text}</p>
                         <h4>Zdjęcie dnia: </h4>
                         <p>{this.state.data.date}</p>
                         <h4>Copyright: </h4>
                         <p>{this.state.data.copyright}</p>
-                    </div>
+                        </div>
                     <div>
                         <h4>Opis: </h4>
                         <Scrollbars style={{height: 255}}>

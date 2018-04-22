@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import scss from '../scss/main.css';
 import {
     HashRouter,
-    Route,
-    Switch
+    Route
 } from 'react-router-dom';
 import Header from './header.jsx';
 import Home from './home.jsx';
