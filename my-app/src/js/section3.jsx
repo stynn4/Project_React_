@@ -24,13 +24,19 @@ class CodeBox extends React.Component {
         super(props)
 
         this.state = {
-            text: 'fullCodeHide'
+            className: 'fullCodeHide'
         }
     }
 
-    displayCode = () => {
+    showCode = () => {
         this.setState({
-            text: 'fullCodeShow'
+            className: 'fullCodeShow'
+            })
+    }
+
+    hideCode = () => {
+        this.setState({
+            className: 'fullCodeHide'
         })
     }
 
@@ -66,20 +72,23 @@ class CodeBox extends React.Component {
                 style={atelierSavannaDark}>
                     {codeStringBroken}
                 </SyntaxHighlighter>
-                <ButtonToShow clickFunction={this.showCode}/>
-                <SyntaxHighlighter 
-                className={this.state.text} 
-                language='javascript' 
-                style={atelierSavannaDark}>
-                    {codeStringFull}
-                </SyntaxHighlighter>
-            </div>
+                <button onClick={this.showCode}>zobacz kod</button>
+                <div className={this.state.className}>
+                    <SyntaxHighlighter 
+                    className='syntaxHighlighter'
+                    language='javascript' 
+                    style={atelierSavannaDark}>
+                        {codeStringFull}
+                    </SyntaxHighlighter>
+                    <button onClick={this.hideCode}>ukryj kod</button>
+                </div>
+                </div>
         )
     }   
 }
 
+/*
 class ButtonToShow extends React.Component {
-    constru
     handleClick = () => {
         if(typeof this.props.clickFunction === 'function') {
             this.props.clickFunction()
@@ -90,19 +99,8 @@ class ButtonToShow extends React.Component {
         return <button onClick={this.handleClick}>zobacz kod</button>
     }
 }
-/*
-class ButtonToHide extends React.Component {
-    handleClick = () => {
-        if(typeof this.props.clickFunction === 'function') {
-            this.props.clickFunction()
-        }
-    }
-
-    render(){
-        return <button onClick={this.handleClick}>ukryj kod</button>
-    }
-}
 */
+
 class TextTyper extends React.Component {
     constructor(props){
         super(props)
@@ -212,7 +210,7 @@ class ApiBox extends React.Component {
                         onMouseLeave={this.mouseLeave}>
                             <img src={this.state.data.url} alt='nasaImageOfTheDay'/>
                         </a>
-                        <p style={this.state} className='textOnImg'>{this.state.text}</p>
+                        <p style={this.state} className='textBeforeImg'>{this.state.text}</p>
                         <h4>Zdjęcie dnia: </h4>
                         <p>{this.state.data.date}</p>
                         <h4>Copyright: </h4>
