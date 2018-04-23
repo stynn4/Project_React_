@@ -70,14 +70,6 @@ $widthList: map-values($widths);
         border: 2px solid rgb(30, 30, 30);
     }
 }
-/*
-SyntaxHighlighter {
-    position: relative !important;
-    width: 100% !important;
-    overflow-y: visible !important;
-    overflow-x: visible !important;
-}
-*/
 
 
 // the second section
@@ -123,11 +115,26 @@ SyntaxHighlighter {
 
 .section3 .codeBox {
     @include codeBox;
+    position: relative;
+    border: 1px solid green;
+}
+
+.section3 .fullCodeHide {
+    display: none !important;
+}
+
+.section3 .fullCodeShow {
+    height: 500px;
+    width: 878px;
+    position: absolute;
+    top: -370px;
+    box-shadow: 0 0 7px map-get($colors, textTyperColor);
 }
 
 .section3 .apiBox {
     height: 100%;
     padding: 10px;
+    border: 1px solid yellow;
 }
 
 .section3 .apiBox > p {
@@ -142,6 +149,27 @@ SyntaxHighlighter {
     height: 85%;
     float: left;
     padding: 10px;
+    border: 1px solid red;
+}
+
+.section3 .apiBox > div:nth-child(2) {
+    position: relative;
+}
+
+.section3 .apiBox > div:nth-child(2) img {
+    width: 240px;
+    height: 150px;
+    margin-top: 25px;
+    box-shadow: 0 0 5px map-get($colors, main);
+}
+
+
+.section3 .apiBox > div:nth-child(2) .textOnImg {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    color: map-get($colors, textTyperColor);
+    text-transform: uppercase; 
 }
 
 .section3 .apiBox >  div:nth-child(2) h4 {
@@ -154,12 +182,6 @@ SyntaxHighlighter {
     margin-top: 1px;
     color: map-get($colors, text);
     padding: 5px;
-}
-
-.section3 .apiBox > div:nth-child(2) img {
-    width: 240px;
-    height: 150px;
-    box-shadow: 0 0 5px map-get($colors, main);
 }
 
 .section3 .apiBox > div:last-child {
@@ -176,5 +198,18 @@ SyntaxHighlighter {
     padding: 15px 15px 0 0;
     line-height: 22px;
 } 
+
+.section3 .codeBox > div > button {
+    position: absolute;
+    left: 80%;
+    top: 70%;
+    background: map-get($colors, textTyperBackground);
+    color: map-get($colors, textTyperColor);
+    padding: 5px;
+    text-transform: uppercase;
+    border: 0;
+    box-shadow: 0 0 5px map-get($colors, main);
+}
+
 
 

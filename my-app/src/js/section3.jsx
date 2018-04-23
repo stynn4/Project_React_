@@ -4,6 +4,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atelierSavannaDark } from 'react-syntax-highlighter/styles/hljs';
 import { Scrollbars } from 'react-custom-scrollbars';
 
+
 class Section3 extends React.Component {
     render(){
 
@@ -19,21 +20,38 @@ class Section3 extends React.Component {
 }
 
 class CodeBox extends React.Component {
+    constructor(props){
+        super(props)
+
+        this.state = {
+            text: 'fullCodeHide'
+        }
+    }
+
+    displayCode = () => {
+        this.setState({
+            text: 'fullCodeShow'
+        })
+    }
+
     render(){
-        const codeString = `import React from 'react';
-        import scss from '../scss/main.css';
-        import SyntaxHighlighter from 'react-syntax-highlighter';
-        import { atelierSavannaDark } from 'react-syntax-highlighter/styles/hljs';
-        
-        
-        
-        class Section1 extends React.Component {
+        const codeStringBroken = `
+        class Section3 extends React.Component {
             render(){
-                
-                const text = '=> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+        
+                const text = 'to jest tekst texttyper'
         
                 return (
-                    <section className='container section'>
+                    <section className='container section3'>`
+
+        const codeStringFull = `
+        class Section3 extends React.Component {
+            render(){
+        
+                const text = 'to jest tekst texttyper'
+        
+                return (
+                    <section className='container section3'>
                             <TextTyper  text={text}/>
                             <EventBox/>
                     </section>
@@ -41,10 +59,50 @@ class CodeBox extends React.Component {
             }
         }`
 
-        return <SyntaxHighlighter language='javascript' style={atelierSavannaDark}>{codeString}</SyntaxHighlighter>;  
+        return (
+            <div>
+                <SyntaxHighlighter  
+                language='javascript' 
+                style={atelierSavannaDark}>
+                    {codeStringBroken}
+                </SyntaxHighlighter>
+                <ButtonToShow clickFunction={this.showCode}/>
+                <SyntaxHighlighter 
+                className={this.state.text} 
+                language='javascript' 
+                style={atelierSavannaDark}>
+                    {codeStringFull}
+                </SyntaxHighlighter>
+            </div>
+        )
     }   
 }
 
+class ButtonToShow extends React.Component {
+    constru
+    handleClick = () => {
+        if(typeof this.props.clickFunction === 'function') {
+            this.props.clickFunction()
+        }
+    }
+
+    render(){
+        return <button onClick={this.handleClick}>zobacz kod</button>
+    }
+}
+/*
+class ButtonToHide extends React.Component {
+    handleClick = () => {
+        if(typeof this.props.clickFunction === 'function') {
+            this.props.clickFunction()
+        }
+    }
+
+    render(){
+        return <button onClick={this.handleClick}>ukryj kod</button>
+    }
+}
+*/
 class TextTyper extends React.Component {
     constructor(props){
         super(props)
@@ -90,7 +148,7 @@ class EventBox extends React.Component {
             
             <div className='eventBox'>
                 <div className='react'>
-                    <ApiBox key="HcI9D0bdacVk9icon6WnwhapN5GAhXM28Rx9YuH3"/>
+                    <ApiBox/>
                 </div>
                 <div className='codeBox'>
                     <CodeBox/>   
@@ -127,16 +185,13 @@ class ApiBox extends React.Component {
 
     mouseEnter = () => {
         this.setState({
-            text: 'powiększ zdjęcie',
-            color: 'rgb(192, 159, 11)',
-            textTransform: 'uppercase'
+            text: 'powiększ zdjęcie'
         })
     }
 
     mouseLeave = () => {
         this.setState({
-            text: '',
-            color: ''
+            text: ''
         })
     }
         
@@ -157,7 +212,7 @@ class ApiBox extends React.Component {
                         onMouseLeave={this.mouseLeave}>
                             <img src={this.state.data.url} alt='nasaImageOfTheDay'/>
                         </a>
-                        <p style={this.state}>{this.state.text}</p>
+                        <p style={this.state} className='textOnImg'>{this.state.text}</p>
                         <h4>Zdjęcie dnia: </h4>
                         <p>{this.state.data.date}</p>
                         <h4>Copyright: </h4>

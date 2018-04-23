@@ -104,8 +104,7 @@ a {
   padding: 10px;
   color: white;
   background: #1e1e1e;
-  border-top: 2px solid #282828;
-  overflow: auto; }
+  border-top: 2px solid #282828; }
 
 .box-1 {
   background: #ca9f14;
@@ -137,14 +136,6 @@ a {
   padding: 20px;
   border: 2px solid #1e1e1e; }
 
-/*
-SyntaxHighlighter {
-    position: relative !important;
-    width: 100% !important;
-    overflow-y: visible !important;
-    overflow-x: visible !important;
-}
-*/
 .section2 {
   height: 80vh;
   display: flex;
@@ -177,8 +168,7 @@ SyntaxHighlighter {
   padding: 10px;
   color: white;
   background: #1e1e1e;
-  border-top: 2px solid #282828;
-  overflow: auto; }
+  border-top: 2px solid #282828; }
 
 .section3 {
   height: 80vh;
@@ -211,11 +201,23 @@ SyntaxHighlighter {
   color: white;
   background: #1e1e1e;
   border-top: 2px solid #282828;
-  overflow: auto; }
+  position: relative;
+  border: 1px solid green; }
+
+.section3 .fullCodeHide {
+  display: none !important; }
+
+.section3 .fullCodeShow {
+  height: 500px;
+  width: 878px;
+  position: absolute;
+  top: -370px;
+  box-shadow: 0 0 7px rgba(192, 159, 11, 0.7); }
 
 .section3 .apiBox {
   height: 100%;
-  padding: 10px; }
+  padding: 10px;
+  border: 1px solid yellow; }
 
 .section3 .apiBox > p {
   margin: 10px 0 10px 0;
@@ -227,7 +229,24 @@ SyntaxHighlighter {
   width: 50%;
   height: 85%;
   float: left;
-  padding: 10px; }
+  padding: 10px;
+  border: 1px solid red; }
+
+.section3 .apiBox > div:nth-child(2) {
+  position: relative; }
+
+.section3 .apiBox > div:nth-child(2) img {
+  width: 240px;
+  height: 150px;
+  margin-top: 25px;
+  box-shadow: 0 0 5px rgba(45, 130, 130, 0.5); }
+
+.section3 .apiBox > div:nth-child(2) .textOnImg {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  color: rgba(192, 159, 11, 0.7);
+  text-transform: uppercase; }
 
 .section3 .apiBox > div:nth-child(2) h4 {
   margin-top: 10px;
@@ -238,11 +257,6 @@ SyntaxHighlighter {
   margin-top: 1px;
   color: #e3f0f5;
   padding: 5px; }
-
-.section3 .apiBox > div:nth-child(2) img {
-  width: 240px;
-  height: 150px;
-  box-shadow: 0 0 5px rgba(45, 130, 130, 0.5); }
 
 .section3 .apiBox > div:last-child {
   box-shadow: 0 0 7px rgba(45, 130, 130, 0.5); }
@@ -255,6 +269,17 @@ SyntaxHighlighter {
   color: #e3f0f5;
   padding: 15px 15px 0 0;
   line-height: 22px; }
+
+.section3 .codeBox > div > button {
+  position: absolute;
+  left: 80%;
+  top: 70%;
+  background: #282828;
+  color: rgba(192, 159, 11, 0.7);
+  padding: 5px;
+  text-transform: uppercase;
+  border: 0;
+  box-shadow: 0 0 5px rgba(45, 130, 130, 0.5); }
 
 footer {
   height: 5vh;

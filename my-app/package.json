@@ -12,6 +12,7 @@
     "react-read-more": "^1.0.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
+    "react-simple-read-more": "^1.1.1",
     "react-syntax-highlighter": "^7.0.2",
     "simple-scrollbar": "^0.4.0"
   },
