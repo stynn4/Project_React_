@@ -26,17 +26,30 @@
     @include shadowEffect;
 }
 
+// all sections
+// textTyper
+
+.textTyper {
+    @include textTyper;
+}
+
+// first div of eventtBox
+.react {
+    @include react;
+}
+
+//eventbox 
+.eventBox {
+    @include eventBox;
+}
+
+.codeBox {
+    @include codeBox;
+}
 
 // the first section
 .section1 {
     @include section;
-}
-.section1 .textTyper {
-    @include textTyper;
-}
-
-.section1 .eventBox {
-    @include eventBox;
 }
 
 .section1 .react {
@@ -78,11 +91,6 @@ $widthList: map-values($widths);
     @include section;
 }
 
-//textTyper
-.section2 .textTyper {
-    @include textTyper;
-}
-
 //eventbox => apibox + codeBox
 .section2 .eventBox {
     @include eventBox;
@@ -93,30 +101,13 @@ $widthList: map-values($widths);
     @include react;
 }
 
-.section2 .codeBox {
-    @include codeBox;
-}
+
 
 
 //the third section ***********************************************************
 
 .section3{
     @include section;
-}
-
-//textTyper
-.section3 .textTyper {
-    @include textTyper;
-}
-
-//eventbox => apibox + codeBox
-.section3 .eventBox {
-    @include eventBox;
-}
-
-// div with ApiBox
-.section3 .react {
-    @include react;
 }
 
 //apiBox
@@ -198,23 +189,19 @@ $widthList: map-values($widths);
 
 // codeBox
 // fullCodeHidden
-.section3 .codeBox {
-    @include codeBox;
-    position: relative;
-}
 
-.section3 .codeBox .fullCodeHide {
+.codeBox .fullCodeHide {
     display: none !important;
 }
 
-.section3 .codeBox > div > button {
+.codeBox > div > button {
     @include buttonShowHideCode;
     left: 85%;
     top: 60%;
 }
 
 //fullCodeShown
-.section3 .codeBox .fullCodeShow {
+.codeBox .fullCodeShow {
     height: 510px;
     width: 878px;
     position: absolute;
@@ -223,11 +210,11 @@ $widthList: map-values($widths);
     box-shadow: 0 0 7px map-get($colors, textTyperColor);
 }
 
-.section3 .codeBox .syntaxHighlighter {
+.codeBox .syntaxHighlighter {
     height: 100%;
 }
 
-.section3 .codeBox .fullCodeShow > button {
+.codeBox .fullCodeShow > button {
     @include buttonShowHideCode;
     left: 87%;
     top: 90%;
@@ -235,7 +222,7 @@ $widthList: map-values($widths);
 }
 
 //hover for two buttons
-.section3 .codeBox > div > button:hover, .section3 .codeBox .fullCodeShow > button:hover {
+.codeBox > div > button:hover, .codeBox .fullCodeShow > button:hover {
     box-shadow: 0 0 5px map-get($colors, textTyperColor);
 }
 

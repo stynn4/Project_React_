@@ -4,6 +4,8 @@ import {
     HashRouter,
     Route
 } from 'react-router-dom';
+import animate from 'animate.css';
+import scss from '../scss/main.css';
 import Header from './header.jsx';
 import Home from './home.jsx';
 import Section1 from './section1';
@@ -46,5 +48,7 @@ class NotFound extends React.Component {
     }
 }
 */
+
+
 export default App;
 

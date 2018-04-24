@@ -1,5 +1,4 @@
 import React from 'react';
-import scss from '../scss/main.css';
 import {
     NavLink
 } from 'react-router-dom';
