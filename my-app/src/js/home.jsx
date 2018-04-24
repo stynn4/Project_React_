@@ -164,9 +164,9 @@ class Underline extends React.Component {
                     <div style={firstLine}/>
                     <div style={secondLine}/>
                     <div style={thirdLine}/>
-                    <div style={fourthLine}></div>
-                    <div style={fifthLine}></div>
-                    <div style={sixthLine}></div>
+                    <div style={fourthLine}/>
+                    <div style={fifthLine}/>
+                    <div style={sixthLine}/>
             </div>
           
         )

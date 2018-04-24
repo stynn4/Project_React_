@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin:0;
     padding:0;
+    font-family: map-get($fonts, font1);
   }
 .window {
   background: rgb(12,24,26); /* Old browsers */
@@ -73,5 +74,17 @@
 {
   height: 70%;
   width: 100%;
+}
+
+//buttons show/hideCode
+@mixin buttonShowHideCode() {
+  position: absolute;
+  padding: 5px;
+  border: 0;
+  box-shadow: 0 0 5px map-get($colors, main);
+  font-family: map-get($fonts, font4);
+  text-transform: uppercase;
+  background: map-get($colors, textTyperBackground);
+  color: map-get($colors, textTyperColor);
 }
 

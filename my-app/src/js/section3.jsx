@@ -1,106 +1,33 @@
 import React from 'react';
 import scss from '../scss/main.css';
+import CodeBox from './code.jsx';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atelierSavannaDark } from 'react-syntax-highlighter/styles/hljs';
 import { Scrollbars } from 'react-custom-scrollbars';
 
 
+//section3  =>       TextTyper + EventBox
+//          =>       TextTyper
+//          =>       EventBox => => ApiBox + CodeBox
+//          => =>    ApiBox
+//          => =>    CodeBox
+
+
+// main section
 class Section3 extends React.Component {
     render(){
-
         const text = 'to jest tekst texttyper'
-
         return (
             <section className='container section3'>
-                    <TextTyper  text={text}/>
-                    <EventBox/>
+                <TextTyper  text={text}/>
+                <EventBox/>
             </section>
         )
     }
 }
 
-class CodeBox extends React.Component {
-    constructor(props){
-        super(props)
 
-        this.state = {
-            className: 'fullCodeHide'
-        }
-    }
-
-    showCode = () => {
-        this.setState({
-            className: 'fullCodeShow'
-            })
-    }
-
-    hideCode = () => {
-        this.setState({
-            className: 'fullCodeHide'
-        })
-    }
-
-    render(){
-        const codeStringBroken = `
-        class Section3 extends React.Component {
-            render(){
-        
-                const text = 'to jest tekst texttyper'
-        
-                return (
-                    <section className='container section3'>`
-
-        const codeStringFull = `
-        class Section3 extends React.Component {
-            render(){
-        
-                const text = 'to jest tekst texttyper'
-        
-                return (
-                    <section className='container section3'>
-                            <TextTyper  text={text}/>
-                            <EventBox/>
-                    </section>
-                )
-            }
-        }`
-
-        return (
-            <div>
-                <SyntaxHighlighter  
-                language='javascript' 
-                style={atelierSavannaDark}>
-                    {codeStringBroken}
-                </SyntaxHighlighter>
-                <button onClick={this.showCode}>zobacz kod</button>
-                <div className={this.state.className}>
-                    <SyntaxHighlighter 
-                    className='syntaxHighlighter'
-                    language='javascript' 
-                    style={atelierSavannaDark}>
-                        {codeStringFull}
-                    </SyntaxHighlighter>
-                    <button onClick={this.hideCode}>ukryj kod</button>
-                </div>
-                </div>
-        )
-    }   
-}
-
-/*
-class ButtonToShow extends React.Component {
-    handleClick = () => {
-        if(typeof this.props.clickFunction === 'function') {
-            this.props.clickFunction()
-        }
-    }
-
-    render(){
-        return <button onClick={this.handleClick}>zobacz kod</button>
-    }
-}
-*/
-
+//left section with typed text
 class TextTyper extends React.Component {
     constructor(props){
         super(props)
@@ -123,7 +50,6 @@ class TextTyper extends React.Component {
             })
 
         }, 100)
-
     }
 
     componentWillUnmount(){
@@ -138,25 +64,26 @@ class TextTyper extends React.Component {
     }
 }
 
+
+//right section with eventBox and codeBox
 class EventBox extends React.Component {
     //key HcI9D0bdacVk9icon6WnwhapN5GAhXM28Rx9YuH3
     render(){
-
         return (
-            
             <div className='eventBox'>
                 <div className='react'>
                     <ApiBox/>
                 </div>
                 <div className='codeBox'>
-                    <CodeBox/>   
+                    <CodeBox brokenCode={codeStringBroken} fullCode={codeStringFull}/>   
                 </div>
-            </div> 
-            
+            </div>   
         )
     }
 }
 
+
+// top section of eventbox with NASA img
 class ApiBox extends React.Component {
     constructor(props){
         super(props)
@@ -168,7 +95,96 @@ class ApiBox extends React.Component {
  
     componentDidMount(){
         
-        fetch(`https://api.nasa.gov/planetary/apod?api_key=HcI9D0bdacVk9icon6WnwhapN5GAhXM28Rx9YuH3`).then(response => {
+        fetch('https://api.nasa.gov/planetary/apod?api_key=HcI9D0bdacVk9icon6WnwhapN5GAhXM28Rx9YuH3').then(response => {
+            return response.json()
+        }).then(data => {
+            console.log(data)
+            
+            this.setState({
+                data:data
+            })/*.catch(err => {
+                console.log(err)
+            })*/
+        })
+    }
+
+    mouseEnter = () => {
+        this.setState({
+            text: 'powiększ zdjęcie'
+        })
+    }
+
+    mouseLeave = () => {
+        this.setState({
+            text: ''
+        })
+    }
+        
+    render(){
+
+        if(this.state.data === false){
+            return <h1 style={{color: 'rgba(45, 130, 130, 0.5)'}}>pobieram dane ...</h1>
+        } else {
+            return (
+                <div className='apiBox'>
+                    <p>Tytuł zdjęcia: {this.state.data.title}</p>
+                    <div>
+
+                        <a href={this.state.data.url}
+                        onMouseEnter={this.mouseEnter} 
+                        onMouseLeave={this.mouseLeave}>
+                            <img src={this.state.data.url} 
+                            alt='nasaImageOfTheDay'/>
+                        </a>
+
+                        <p className='textBeforeImg'>{this.state.text}</p>
+                        <h4>Zdjęcie dnia: </h4>
+                        <p>{this.state.data.date}</p>
+                        <h4>Copyright: </h4>
+                        <p>{this.state.data.copyright}</p>
+
+                    </div>
+
+                    <div>
+
+                        <h4>Opis: </h4>
+                        <Scrollbars style={{height: 255}}>
+                            <p>{this.state.data.explanation}</p>
+                        </Scrollbars>
+
+                    </div>
+                </div>
+		    )         
+        }
+    }
+}     
+
+
+// brokenCode for CodeBox
+let codeStringBroken = `
+class ApiBox extends React.Component {
+    constructor(props){
+        super(props)
+
+        this.state = {
+            data: false
+        }`
+
+
+//fullCode for CodeBox
+let codeStringFull = `
+class ApiBox extends React.Component {
+    constructor(props){
+        super(props)
+
+        this.state = {
+            data: false
+        }
+    }
+ 
+    componentDidMount(){
+        
+        fetch('https://api.nasa.gov/planetary/apod?api_key=HcI9D0bdacVk9icon6WnwhapN5GAhXM28Rx9YuH3').then(response => {
             return response.json()
         }).then(data => {
             console.log(data)
@@ -196,8 +212,6 @@ class ApiBox extends React.Component {
 
     render(){
 
-        
-
         if(this.state.data === false){
             return <h1 style={{color: 'rgba(45, 130, 130, 0.5)'}}>pobieram dane ...</h1>
         } else {
@@ -205,28 +219,36 @@ class ApiBox extends React.Component {
                 <div className='apiBox'>
                     <p>Tytuł zdjęcia: {this.state.data.title}</p>
                     <div>
+
                         <a href={this.state.data.url}
                         onMouseEnter={this.mouseEnter} 
                         onMouseLeave={this.mouseLeave}>
-                            <img src={this.state.data.url} alt='nasaImageOfTheDay'/>
+                            <img src={this.state.data.url} 
+                            alt='nasaImageOfTheDay'/>
                         </a>
-                        <p style={this.state} className='textBeforeImg'>{this.state.text}</p>
+
+                        <p className='textBeforeImg'>{this.state.text}</p>
                         <h4>Zdjęcie dnia: </h4>
                         <p>{this.state.data.date}</p>
                         <h4>Copyright: </h4>
                         <p>{this.state.data.copyright}</p>
-                        </div>
+
+                    </div>
+
                     <div>
+
                         <h4>Opis: </h4>
                         <Scrollbars style={{height: 255}}>
                             <p>{this.state.data.explanation}</p>
                         </Scrollbars>
+
                     </div>
                 </div>
 		    )         
         }
     }
-}     
+}`
+    
 
 
 export default Section3;

@@ -1,7 +1,38 @@
+@font-face {
+  font-family: 'Regular';
+  src: url("../fonts/JosefinSans.woff2") format("woff2"), url("../fonts/JosefinSans.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Light';
+  src: url("../fonts/JosefinSans-Light.woff2") format("woff2"), url("../fonts/JosefinSans-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Thin';
+  src: url("../fonts/JosefinSans-Thin.woff2") format("woff2"), url("../fonts/JosefinSans-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'SemiBold';
+  src: url("../fonts/JosefinSans-SemiBold.woff2") format("woff2"), url("../fonts/JosefinSans-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Bold';
+  src: url("../fonts/JosefinSans-Bold.woff2") format("woff2"), url("../fonts/JosefinSans-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal; }
+
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-family: Regular; }
 
 .window {
   background: #0c181a;
@@ -138,9 +169,7 @@ a {
 
 .section2 {
   height: 80vh;
-  display: flex;
-  height: 80vh;
-  background: lightgrey; }
+  display: flex; }
 
 .section2 .textTyper {
   width: 25%;
@@ -217,6 +246,9 @@ a {
   margin-top: 25px;
   box-shadow: 0 0 5px rgba(45, 130, 130, 0.5); }
 
+.section3 .apiBox > div:nth-child(2) img:hover {
+  box-shadow: 0 0 5px rgba(192, 159, 11, 0.7); }
+
 .section3 .apiBox > div:nth-child(2) .textBeforeImg {
   position: absolute;
   top: 0;
@@ -226,7 +258,8 @@ a {
 
 .section3 .apiBox > div:nth-child(2) h4 {
   margin-top: 10px;
-  color: rgba(45, 130, 130, 0.5); }
+  color: rgba(45, 130, 130, 0.5);
+  font-family: Bold; }
 
 .section3 .apiBox > div:nth-child(2) p {
   font-size: 17px;
@@ -239,7 +272,8 @@ a {
 
 .section3 .apiBox div:last-child h4 {
   color: rgba(45, 130, 130, 0.5);
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  font-family: Bold; }
 
 .section3 .apiBox div:last-child p {
   color: #e3f0f5;
@@ -262,14 +296,15 @@ a {
 
 .section3 .codeBox > div > button {
   position: absolute;
-  left: 85%;
-  top: 60%;
+  padding: 5px;
+  border: 0;
+  box-shadow: 0 0 5px rgba(45, 130, 130, 0.5);
+  font-family: SemiBold;
+  text-transform: uppercase;
   background: #282828;
   color: rgba(192, 159, 11, 0.7);
-  padding: 5px;
-  text-transform: uppercase;
-  border: 0;
-  box-shadow: 0 0 5px rgba(45, 130, 130, 0.5); }
+  left: 85%;
+  top: 60%; }
 
 .section3 .codeBox .fullCodeShow {
   height: 510px;
@@ -284,14 +319,15 @@ a {
 
 .section3 .codeBox .fullCodeShow > button {
   position: absolute;
-  left: 87%;
-  top: 90%;
+  padding: 5px;
+  border: 0;
+  box-shadow: 0 0 5px rgba(45, 130, 130, 0.5);
+  font-family: SemiBold;
+  text-transform: uppercase;
   background: #282828;
   color: rgba(192, 159, 11, 0.7);
-  padding: 5px;
-  text-transform: uppercase;
-  border: 0;
-  box-shadow: 0 0 5px rgba(45, 130, 130, 0.5); }
+  left: 87%;
+  top: 90%; }
 
 .section3 .codeBox > div > button:hover, .section3 .codeBox .fullCodeShow > button:hover {
   box-shadow: 0 0 5px rgba(192, 159, 11, 0.7); }

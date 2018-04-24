@@ -72,21 +72,23 @@ $widthList: map-values($widths);
 }
 
 
-// the second section
+// the second section*************************************************************
+
 .section2 {
     @include section;
-    height: 80vh;
-    background: lightgrey;
 }
 
+//textTyper
 .section2 .textTyper {
     @include textTyper;
 }
 
+//eventbox => apibox + codeBox
 .section2 .eventBox {
     @include eventBox;
 }
 
+// div with ApiBox
 .section2 .react {
     @include react;
 }
@@ -107,11 +109,12 @@ $widthList: map-values($widths);
     @include textTyper;
 }
 
-//eventbox (apibox + codeBox)
+//eventbox => apibox + codeBox
 .section3 .eventBox {
     @include eventBox;
 }
 
+// div with ApiBox
 .section3 .react {
     @include react;
 }
@@ -150,6 +153,10 @@ $widthList: map-values($widths);
     box-shadow: 0 0 5px map-get($colors, main);
 }
 
+.section3 .apiBox > div:nth-child(2) img:hover {
+    box-shadow: 0 0 5px map-get($colors, textTyperColor);
+}
+
 //textBeforeImgOnMouseEnter
 .section3 .apiBox > div:nth-child(2) .textBeforeImg {
     position: absolute;
@@ -162,6 +169,7 @@ $widthList: map-values($widths);
 .section3 .apiBox >  div:nth-child(2) h4 {
     margin-top: 10px;
     color: map-get($colors, main);
+    font-family: map-get($fonts, font5);
 }
 
 .section3 .apiBox > div:nth-child(2) p {
@@ -179,6 +187,7 @@ $widthList: map-values($widths);
 .section3 .apiBox div:last-child h4 {
     color: map-get($colors, main);
     margin-bottom: 10px;
+    font-family: map-get($fonts, font5);
 }
 
 .section3 .apiBox div:last-child p {
@@ -199,15 +208,9 @@ $widthList: map-values($widths);
 }
 
 .section3 .codeBox > div > button {
-    position: absolute;
+    @include buttonShowHideCode;
     left: 85%;
     top: 60%;
-    background: map-get($colors, textTyperBackground);
-    color: map-get($colors, textTyperColor);
-    padding: 5px;
-    text-transform: uppercase;
-    border: 0;
-    box-shadow: 0 0 5px map-get($colors, main);
 }
 
 //fullCodeShown
@@ -225,15 +228,10 @@ $widthList: map-values($widths);
 }
 
 .section3 .codeBox .fullCodeShow > button {
-    position: absolute;
+    @include buttonShowHideCode;
     left: 87%;
     top: 90%;
-    background: map-get($colors, textTyperBackground);
-    color: map-get($colors, textTyperColor);
-    padding: 5px;
-    text-transform: uppercase;
-    border: 0;
-    box-shadow: 0 0 5px map-get($colors, main);
+    
 }
 
 //hover for two buttons
