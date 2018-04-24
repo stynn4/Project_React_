@@ -96,11 +96,18 @@ $widthList: map-values($widths);
     @include eventBox;
 }
 
-// div with ApiBox
-.section2 .react {
-    @include react;
+.section2 .addressBookForm, .addressBookList {
+    width: 50%;
+    height: 100%;
+    float: left;
+    border: 1px solid pink;
 }
 
+.section2 label {
+    float: left;
+    padding: 15px;
+    color: map-get($colors, textTyperColor);
+}
 
 
 

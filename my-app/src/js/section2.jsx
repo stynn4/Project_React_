@@ -32,7 +32,7 @@ class EventBox extends React.Component {
         return (
             <div className='eventBox'>
                 <div className='react'>
-                    
+                    <AddressBook/>
                 </div>
                 <div className='codeBox'>
                     <CodeBox brokenCode={codeStringBroken} fullCode={codeStringFull}/>   
@@ -41,11 +41,14 @@ class EventBox extends React.Component {
         )
     }
 }
-/*
+
 class AddressBook extends React.Component {
     render(){
         return (
-            <AddressBookForm/>
+            <div>
+                <AddressBookForm/>
+                <AddressBookList/>
+            </div>
         )
     }  
 }
@@ -55,29 +58,96 @@ class AddressBookForm extends React.Component {
         super(props)
 
         this.state = {
-            name: '',
-            surname: '',
-            phoneNumber: '',
-            email: '',
-            other: ''
+            dataFromInputs:{}
         }
     }
 
-    render(){
-        return 
-        (
-            <form>
-                <input type='text'
-                value={this.state.name}
-                onChange={this.handleInput}
-                id='name'
-                placeholder='imię'/>
-            </form>
-        )
+    handleInput = (e) => {
+        
+        let dataFromInputs = this.state.dataFromInputs
 
+        let name = e.target.name
+        let surname = e.target.surname
+        let phoneNumber = e.target.phoneNumber
+        let email = e.target.email
+        let value = e.target.value
+
+        dataFromInputs[name] = value;
+
+        this.setState({
+            dataFromInputs
+        })
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault(); 
+        console.log(this.state.dataFromInputs)
+    }
+
+    render(){
+        return (
+            <div className='addressBookForm'>
+                <form onSubmit={this.handleSubmit.bind(this)}>
+                    <label>
+                        Imię: 
+                        <input type='text'
+                        value={this.state.dataFromInputs['name']}
+                        onChange={this.handleInput.bind(this)}
+                        id='name'
+                        name='name'
+                        placeholder='podaj imię'/>
+                    </label>
+
+                    <label>
+                        Nazwisko: 
+                        <input type='text'
+                        value={this.state.dataFromInputs['surname']}
+                        onChange={this.handleInput.bind(this)}
+                        id='surname'
+                        name='surname'
+                        placeholder='podaj nazwisko'/>
+                    </label>
+
+                    <label>
+                        Numer telefonu: 
+                        <input type='text'
+                        value={this.state.dataFromInputs['phoneNumber']}
+                        onChange={this.handleInput.bind(this)}
+                        id='phoneNumber'
+                        name='phoneNumber'
+                        placeholder='podaj numer telefonu'/>
+                    </label>
+
+                    <label>
+                        Adres mailowy: 
+                        <input type='text'
+                        value={this.state.dataFromInputs['email']}
+                        onChange={this.handleInput.bind(this)}
+                        id='email'
+                        name='email'
+                        placeholder='podaj email'/>
+                    </label>
+
+                    <input type='submit' value='submit'/>
+                </form>
+            </div>
+        )
     }
 }
-*/
+
+class AddressBookList extends React.Component {
+    render(){
+        return (
+            <div className='addressBookList'>
+                <table>
+                  
+                </table>
+            </div>
+        )
+    }
+}
+
+
 // brokenCode for CodeBox
 let codeStringBroken = `
 class ApiBox extends React.Component {

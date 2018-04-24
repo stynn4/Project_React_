@@ -192,9 +192,16 @@ a {
   width: 75%;
   height: 100%; }
 
-.section2 .react {
-  height: 70%;
-  width: 100%; }
+.section2 .addressBookForm, .addressBookList {
+  width: 50%;
+  height: 100%;
+  float: left;
+  border: 1px solid pink; }
+
+.section2 label {
+  float: left;
+  padding: 15px;
+  color: rgba(192, 159, 11, 0.7); }
 
 .section3 {
   height: 80vh;
