@@ -79,9 +79,14 @@ class AddressBookForm extends React.Component {
         })
     }
 
+
+
     handleSubmit = (e) => {
         e.preventDefault(); 
         console.log(this.state.dataFromInputs)
+        let people = []
+        people.push(this.state.dataFromInputs)
+        console.log(people[0])
     }
 
     render(){
