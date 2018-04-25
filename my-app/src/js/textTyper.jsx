@@ -28,7 +28,7 @@ class TextTyper extends React.Component {
     }
 
     componentWillUnmount(){
-        clearTimeout(this.timer)
+        clearTimeout(this.interval)
     }
     render(){
         return (

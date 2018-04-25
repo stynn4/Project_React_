@@ -58,7 +58,12 @@ class AddressBookForm extends React.Component {
         super(props)
 
         this.state = {
-            dataFromInputs:{}
+            dataFromInputs:{
+                name: '',
+                surname: '',
+                phoneNumber: '',
+                email: ''
+            }
         }
     }
 
@@ -84,20 +89,23 @@ class AddressBookForm extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault(); 
         console.log(this.state.dataFromInputs)
+
         let people = []
         people.push(this.state.dataFromInputs)
         console.log(people[0])
+        console.log(people[1])
+        console.log(people[0].name)
     }
-
+    
     render(){
         return (
             <div className='addressBookForm'>
-                <form onSubmit={this.handleSubmit.bind(this)}>
+                <form onSubmit={this.handleSubmit}>
                     <label>
                         Imię: 
                         <input type='text'
-                        value={this.state.dataFromInputs['name']}
-                        onChange={this.handleInput.bind(this)}
+                        value={this.state.name}
+                        onChange={this.handleInput}
                         id='name'
                         name='name'
                         placeholder='podaj imię'/>
@@ -106,8 +114,8 @@ class AddressBookForm extends React.Component {
                     <label>
                         Nazwisko: 
                         <input type='text'
-                        value={this.state.dataFromInputs['surname']}
-                        onChange={this.handleInput.bind(this)}
+                        value={this.state.surname}
+                        onChange={this.handleInput}
                         id='surname'
                         name='surname'
                         placeholder='podaj nazwisko'/>
@@ -116,8 +124,8 @@ class AddressBookForm extends React.Component {
                     <label>
                         Numer telefonu: 
                         <input type='text'
-                        value={this.state.dataFromInputs['phoneNumber']}
-                        onChange={this.handleInput.bind(this)}
+                        value={this.state.phoneNumber}
+                        onChange={this.handleInput}
                         id='phoneNumber'
                         name='phoneNumber'
                         placeholder='podaj numer telefonu'/>
@@ -126,8 +134,8 @@ class AddressBookForm extends React.Component {
                     <label>
                         Adres mailowy: 
                         <input type='text'
-                        value={this.state.dataFromInputs['email']}
-                        onChange={this.handleInput.bind(this)}
+                        value={this.state.email}
+                        onChange={this.handleInput}
                         id='email'
                         name='email'
                         placeholder='podaj email'/>
@@ -135,7 +143,9 @@ class AddressBookForm extends React.Component {
 
                     <input type='submit' value='submit'/>
                 </form>
+               
             </div>
+            
         )
     }
 }
@@ -145,7 +155,7 @@ class AddressBookList extends React.Component {
         return (
             <div className='addressBookList'>
                 <table>
-                  
+                
                 </table>
             </div>
         )
