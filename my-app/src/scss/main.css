@@ -193,15 +193,54 @@ a {
   height: 100%; }
 
 .section2 .addressBookForm, .addressBookList {
-  width: 50%;
   height: 100%;
   float: left;
   border: 1px solid pink; }
+
+.addressBookForm {
+  width: 35%;
+  padding: 5px; }
+  .addressBookForm::before, .addressBookForm::after {
+    clear: both;
+    content: '';
+    display: block; }
+
+.addressBookForm form {
+  border: 1px solid rgba(192, 159, 11, 0.7); }
+
+.addressBookList {
+  padding: 5px;
+  width: 65%; }
 
 .section2 label {
   float: left;
   padding: 15px;
   color: rgba(192, 159, 11, 0.7); }
+
+.addressBookList table {
+  border: 1px solid rgba(45, 130, 130, 0.5); }
+
+.addressBookList th {
+  font-size: 18px;
+  color: rgba(45, 130, 130, 0.5);
+  padding: 20px 0 20px 0;
+  text-align: left; }
+
+.addressBookList th:last-of-type {
+  text-align: center; }
+
+.addressBookList th:first-of-type {
+  width: 30px; }
+
+.addressBookList th {
+  width: 100px; }
+
+.addressBookList td {
+  padding-bottom: 5px;
+  color: rgba(220, 220, 220, 0.7); }
+
+.addressBookList td:last-of-type {
+  text-align: center; }
 
 .section3 {
   height: 80vh;

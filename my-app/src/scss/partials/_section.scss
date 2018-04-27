@@ -97,19 +97,61 @@ $widthList: map-values($widths);
 }
 
 .section2 .addressBookForm, .addressBookList {
-    width: 50%;
     height: 100%;
     float: left;
     border: 1px solid pink;
 }
 
+.addressBookForm {
+    width: 35%;
+    padding: 5px;
+    @include clearFix;
+}
+
+.addressBookForm form {
+    border: 1px solid map-get($colors, textTyperColor);
+}
+
+.addressBookList {
+    padding: 5px;
+    width: 65%;
+}
 .section2 label {
     float: left;
     padding: 15px;
     color: map-get($colors, textTyperColor);
 }
 
+.addressBookList table {
+    border: 1px solid map-get($colors, main);
+}
+.addressBookList th {
+    font-size: 18px;
+    color: map-get($colors, main); 
+    padding: 20px 0 20px 0;
+    text-align: left;
+}
 
+.addressBookList th:last-of-type {
+    text-align: center;
+}
+
+.addressBookList th:first-of-type {
+    width: 30px;
+}
+
+.addressBookList th {
+    width: 100px;
+}
+
+.addressBookList td {
+    padding-bottom: 5px;
+    color: map-get($colors, text3); 
+}
+
+.addressBookList td:last-of-type {
+    text-align: center;
+}
 
 //the third section ***********************************************************
 

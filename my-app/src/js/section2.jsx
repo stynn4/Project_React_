@@ -194,7 +194,40 @@ class AddressBookList extends React.Component {
         } else {
         return (
             <div className='addressBookList'>
-                <p style={{color: 'white'}}>{this.state.data[0].name}</p>
+                <table>
+                    <tr>
+                        <th>id</th>
+                        <th>imię</th>
+                        <th>nazwisko</th>
+                        <th>numer tel.</th>
+                        <th>email</th>
+                        <th>usuń dane</th>
+                    </tr>
+                    <tr>
+                        <td>{this.state.data[0].id}</td>
+                        <td>{this.state.data[0].name}</td>
+                        <td>{this.state.data[0].surname}</td>
+                        <td>{this.state.data[0].phoneNumber}</td>
+                        <td>{this.state.data[0].email}</td>
+                        <td><button>usuń</button></td>
+                    </tr>
+                    <tr>
+                        <td>{this.state.data[1].id}</td>
+                        <td>{this.state.data[1].name}</td>
+                        <td>{this.state.data[1].surname}</td>
+                        <td>{this.state.data[1].phoneNumber}</td>
+                        <td>{this.state.data[1].email}</td>
+                        <td><button>usuń</button></td>
+                    </tr>
+                    <tr>
+                        <td>{this.state.data[2].id}</td>
+                        <td>{this.state.data[2].name}</td>
+                        <td>{this.state.data[2].surname}</td>
+                        <td>{this.state.data[2].phoneNumber}</td>
+                        <td>{this.state.data[2].email}</td>
+                        <td><button>usuń</button></td>
+                    </tr>
+                </table>
             </div>
         
         
