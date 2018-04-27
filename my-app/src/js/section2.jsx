@@ -7,8 +7,9 @@ import { atelierSavannaDark } from 'react-syntax-highlighter/styles/hljs';
 //section2  =>       TextTyper + EventBox
 //          =>       TextTyper
 //          =>       EventBox => =>  + CodeBox
-//          => =>    
+//          => =>    AddressBook
 //          => =>    CodeBox
+//          => => => AddressBook => => => AddressBookForm + AddressBookList
 
 
 
@@ -58,7 +59,7 @@ class AddressBookForm extends React.Component {
         super(props)
 
         this.state = {
-            dataFromInputs:{
+            person:{
                 name: '',
                 surname: '',
                 phoneNumber: '',
@@ -69,7 +70,7 @@ class AddressBookForm extends React.Component {
 
     handleInput = (e) => {
         
-        let dataFromInputs = this.state.dataFromInputs
+        let person = this.state.person
 
         let name = e.target.name
         let surname = e.target.surname
@@ -77,21 +78,19 @@ class AddressBookForm extends React.Component {
         let email = e.target.email
         let value = e.target.value
 
-        dataFromInputs[name] = value;
+        person[name] = value;
 
         this.setState({
-            dataFromInputs
+            person
         })
     }
 
-
-
     handleSubmit = (e) => {
         e.preventDefault(); 
-        console.log(this.state.dataFromInputs)
+        console.log(this.state.person)
         
         let people = []
-        people.push(this.state.dataFromInputs)
+        people.push(this.state.person)
         const obj = {
             "name": people[0].name,
             "surname": people[0].surname,
@@ -113,6 +112,7 @@ class AddressBookForm extends React.Component {
 
     
     render(){
+       
         return (
             <div className='addressBookForm'>
                 <form onSubmit={this.handleSubmit}>
@@ -158,7 +158,6 @@ class AddressBookForm extends React.Component {
 
                     <input type='submit' value='submit'/>
                 </form>
-               
             </div>
             
         )
@@ -173,15 +172,34 @@ class AddressBookList extends React.Component {
             data: false
         }
     }
-    
-   
-    
+
+    componentDidMount(){
+        fetch('http://localhost:3000/addressBook').then(response => {
+            return response.json()
+        }).then(data => {
+            console.log(data)
+            console.log(data[0].name)
+            this.setState({
+                data:data
+                
+            })/*.catch(err => {
+                console.log(err)
+            })*/
+        })
+    }
     render(){
+        
+        if(this.state.data === false){
+           return <h1 style={{color: 'rgba(45, 130, 130, 0.5)'}}>pobieram dane ...</h1>
+        } else {
         return (
             <div className='addressBookList'>
-            <p></p>
+                <p style={{color: 'white'}}>{this.state.data[0].name}</p>
             </div>
-        )
+        
+        
+            )
+    }
     }
 }
 

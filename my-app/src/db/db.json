@@ -6,6 +6,13 @@
       "phoneNumber": "66666666",
       "email": "marina@gmail.com",
       "id": 1
+    },
+    {
+      "name": "Grzegorz",
+      "surname": "Kowalczyk",
+      "phoneNumber": "3333333333",
+      "email": "grzegotrz@gmail.com",
+      "id": 2
     }
   ]
 }
