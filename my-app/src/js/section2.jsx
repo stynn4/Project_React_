@@ -89,13 +89,28 @@ class AddressBookForm extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault(); 
         console.log(this.state.dataFromInputs)
-
+        
         let people = []
         people.push(this.state.dataFromInputs)
-        console.log(people[0])
-        console.log(people[1])
-        console.log(people[0].name)
+        const obj = {
+            "name": people[0].name,
+            "surname": people[0].surname,
+            "phoneNumber": people[0].phoneNumber,
+            "email": people[0].email
+        }
+        
+        fetch('http://localhost:3000/addressBook', {
+            method: 'POST',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify(obj) 
+        }).then(function (data) {  
+            console.log('Request success: ', data);  
+          })  
+          .catch(function (error) {  
+            console.log('Request failure: ', error);  
+          });
     }
+
     
     render(){
         return (
@@ -151,12 +166,20 @@ class AddressBookForm extends React.Component {
 }
 
 class AddressBookList extends React.Component {
+    constructor(props){
+        super(props)
+
+        this.state = {
+            data: false
+        }
+    }
+    
+   
+    
     render(){
         return (
             <div className='addressBookList'>
-                <table>
-                
-                </table>
+            <p></p>
             </div>
         )
     }

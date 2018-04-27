@@ -1,0 +1,11 @@
+{
+  "addressBook": [
+    {
+      "name": "Marianna",
+      "surname": "Nowak",
+      "phoneNumber": "66666666",
+      "email": "marina@gmail.com",
+      "id": 1
+    }
+  ]
+}
