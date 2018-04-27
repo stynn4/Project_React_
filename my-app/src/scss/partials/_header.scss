@@ -14,8 +14,15 @@ li {
     background: map-get($colors, navLinkBackground);
     font-size: 25px;
 }
+
 .shadow {
     @include shadowEffect;
+}
+
+.shadow:hover {
+        -moz-box-shadow:    inset 0 0 10px map-get($colors, textTyperColor);
+        -webkit-box-shadow: inset 0 0 10px map-get($colors, textTyperColor);
+        box-shadow:         inset 0 0 10px map-get($colors, textTyperColor);
 }
 
 a {
@@ -23,3 +30,4 @@ a {
     color: map-get($colors, main);
     text-transform: uppercase
 }
+

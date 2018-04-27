@@ -109,21 +109,32 @@ $widthList: map-values($widths);
 }
 
 .addressBookForm form {
-    border: 1px solid map-get($colors, textTyperColor);
+    box-shadow: 0 0 5px map-get($colors, main);
 }
+
+.addressBookForm form:hover {
+    box-shadow: 0 0 5px map-get($colors, textTyperColor);
+}
+
+.section2 label {
+    float: left;
+    padding: 10px;
+    margin: 10px 80px 0 10px;
+    color: map-get($colors, textTyperColor);
+}
+
+.section2 label:hover {
+    box-shadow: 0 0 5px map-get($colors, textTyperColor);
+}
+
 
 .addressBookList {
     padding: 5px;
     width: 65%;
 }
-.section2 label {
-    float: left;
-    padding: 15px;
-    color: map-get($colors, textTyperColor);
-}
 
 .addressBookList table {
-    border: 1px solid map-get($colors, main);
+    box-shadow: 0 0 5px map-get($colors, main);
 }
 .addressBookList th {
     font-size: 18px;
@@ -213,15 +224,19 @@ $widthList: map-values($widths);
 }
 
 .section3 .apiBox > div:nth-child(2) p {
-    font-size: 17px;
+    font-size: 16px;
     margin-top: 1px;
-    color: map-get($colors, text);
+    color: map-get($colors, text3);
     padding: 5px;
 }
 
 //rightDivWithTitleAndDescription
 .section3 .apiBox > div:last-child {
     box-shadow: 0 0 7px map-get($colors, main);
+}
+
+.section3 .apiBox > div:last-child:hover {
+    box-shadow: 0 0 7px map-get($colors, textTyperColor);
 }
 
 .section3 .apiBox div:last-child h4 {
@@ -231,10 +246,11 @@ $widthList: map-values($widths);
 }
 
 .section3 .apiBox div:last-child p {
-    color: map-get($colors, text);
+    color: map-get($colors, text3);
     padding: 15px 15px 0 0;
     line-height: 22px;
 } 
+
 
 // codeBox
 // fullCodeHidden
@@ -244,7 +260,7 @@ $widthList: map-values($widths);
 }
 
 .codeBox > div > button {
-    @include buttonShowHideCode;
+    @include button;
     left: 85%;
     top: 60%;
 }
@@ -264,7 +280,7 @@ $widthList: map-values($widths);
 }
 
 .codeBox .fullCodeShow > button {
-    @include buttonShowHideCode;
+    @include button;
     left: 87%;
     top: 90%;
     
@@ -273,6 +289,7 @@ $widthList: map-values($widths);
 //hover for two buttons
 .codeBox > div > button:hover, .codeBox .fullCodeShow > button:hover {
     box-shadow: 0 0 5px map-get($colors, textTyperColor);
+    color: map-get($colors, textTyperColor);
 }
 
 

@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin:0;
     padding:0;
-    font-family: map-get($fonts, font1);
+    font-family: map-get($fonts, font1) Arial, Helvetica, sans-serif;
   }
 .window {
   background: rgb(12,24,26); /* Old browsers */
@@ -78,7 +78,7 @@
 }
 
 //buttons show/hideCode
-@mixin buttonShowHideCode() {
+@mixin button() {
   position: absolute;
   padding: 5px;
   border: 0;
@@ -86,6 +86,6 @@
   font-family: map-get($fonts, font4);
   text-transform: uppercase;
   background: map-get($colors, textTyperBackground);
-  color: map-get($colors, textTyperColor);
+  color: map-get($colors, main);
 }
 
