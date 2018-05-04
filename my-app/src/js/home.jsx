@@ -180,7 +180,7 @@ class Home extends React.Component {
             <div className='container home'>
                 <p>Home</p>
                 <Underline firstLineTime={1} 
-                border={'10px solid rgb(45, 130, 130)'}
+                border={'10px solid rgba(45, 130, 130, 0.3)'}
                 secondLineTime={1.5} 
                 thirdLineTime={2.0} 
                 fourthLineTime={2.5}

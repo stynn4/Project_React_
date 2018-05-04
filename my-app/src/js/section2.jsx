@@ -156,7 +156,7 @@ class AddressBookForm extends React.Component {
                         placeholder='podaj email'/>
                     </label>
 
-                    <input type='submit' value='submit'/>
+                    <input type='submit' value='zatwierdź'/>
                 </form>
             </div>
             

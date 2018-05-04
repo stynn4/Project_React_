@@ -47,6 +47,7 @@
     @include codeBox;
 }
 
+
 // the first section
 .section1 {
     @include section;
@@ -99,7 +100,6 @@ $widthList: map-values($widths);
 .section2 .addressBookForm, .addressBookList {
     height: 100%;
     float: left;
-    border: 1px solid pink;
 }
 
 .addressBookForm {
@@ -109,7 +109,9 @@ $widthList: map-values($widths);
 }
 
 .addressBookForm form {
+    height: 100%;
     box-shadow: 0 0 5px map-get($colors, main);
+    
 }
 
 .addressBookForm form:hover {
@@ -118,15 +120,43 @@ $widthList: map-values($widths);
 
 .section2 label {
     float: left;
-    padding: 10px;
+    padding: 3px 10px 7px 10px;
     margin: 10px 80px 0 10px;
-    color: map-get($colors, textTyperColor);
+    color: map-get($colors, main);
 }
 
 .section2 label:hover {
     box-shadow: 0 0 5px map-get($colors, textTyperColor);
 }
 
+.section2 label input {
+    height: 30px;
+    margin-top: 10px;
+    background: map-get($colors, textTyperBackground);
+    color: map-get($colors, textTyperColor);
+    border: 1px solid map-get($colors, main);
+    font-size: 17px;
+    padding-left: 3px;
+}
+
+.section2 label input:focus {
+    background: map-get($colors, inputBackground);
+    color: map-get($colors, eventBoxBackground);
+    box-shadow: none;
+    outline: none;
+}
+
+// input submit
+.section2 form > input {
+    @include button;   
+    margin: 25px 0 10px 200px; 
+    position: relative;
+}
+
+.section2 form > input:hover {
+    box-shadow: 0 0 5px map-get($colors, textTyperColor);
+    color: map-get($colors, textTyperColor);
+}
 
 .addressBookList {
     padding: 5px;
@@ -261,16 +291,16 @@ $widthList: map-values($widths);
 
 .codeBox > div > button {
     @include button;
-    left: 85%;
-    top: 60%;
+    left: 87%;
+    top: 65%;
 }
 
 //fullCodeShown
 .codeBox .fullCodeShow {
-    height: 510px;
-    width: 878px;
+    width: 100%;
+    height: 336%;
     position: absolute;
-    top: -370px;
+    top: -380px;
     background: map-get($colors, textTyperBackground);
     box-shadow: 0 0 7px map-get($colors, textTyperColor);
 }
