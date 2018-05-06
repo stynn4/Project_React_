@@ -62,9 +62,8 @@
   height: 30%;
   width: 100%;
   position: relative;
-  vertical-align: bottom;
-  background: map-get($colors, eventBoxBackground);
   border-top: 2px solid map-get($colors, textTyperBackground);
+  font-size: 15px;
 }
 
 @mixin react()

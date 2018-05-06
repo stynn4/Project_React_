@@ -6,7 +6,7 @@ import { atelierSavannaDark } from 'react-syntax-highlighter/styles/hljs';
 
 //section2  =>       TextTyper + EventBox
 //          =>       TextTyper
-//          =>       EventBox => =>  + CodeBox
+//          =>       EventBox => => AddressBook + CodeBox
 //          => =>    AddressBook
 //          => =>    CodeBox
 //          => => => AddressBook => => => AddressBookForm + AddressBookList
@@ -178,7 +178,6 @@ class AddressBookList extends React.Component {
             return response.json()
         }).then(data => {
             console.log(data)
-            console.log(data[0].name)
             this.setState({
                 data:data
                 
@@ -187,52 +186,47 @@ class AddressBookList extends React.Component {
             })*/
         })
     }
+
+    handleClick = () => {
+        console.log('click')
+    }
+
     render(){
-        
+        console.log(this.state.data)
         if(this.state.data === false){
            return <h1 style={{color: 'rgba(45, 130, 130, 0.5)'}}>pobieram dane ...</h1>
         } else {
         return (
-            <div className='addressBookList'>
-                <table>
-                    <tr>
-                        <th>id</th>
-                        <th>imię</th>
-                        <th>nazwisko</th>
-                        <th>numer tel.</th>
-                        <th>email</th>
-                        <th>usuń dane</th>
-                    </tr>
-                    <tr>
-                        <td>{this.state.data[0].id}</td>
-                        <td>{this.state.data[0].name}</td>
-                        <td>{this.state.data[0].surname}</td>
-                        <td>{this.state.data[0].phoneNumber}</td>
-                        <td>{this.state.data[0].email}</td>
-                        <td><button>usuń</button></td>
-                    </tr>
-                    <tr>
-                        <td>{this.state.data[1].id}</td>
-                        <td>{this.state.data[1].name}</td>
-                        <td>{this.state.data[1].surname}</td>
-                        <td>{this.state.data[1].phoneNumber}</td>
-                        <td>{this.state.data[1].email}</td>
-                        <td><button>usuń</button></td>
-                    </tr>
-                    <tr>
-                        <td>{this.state.data[2].id}</td>
-                        <td>{this.state.data[2].name}</td>
-                        <td>{this.state.data[2].surname}</td>
-                        <td>{this.state.data[2].phoneNumber}</td>
-                        <td>{this.state.data[2].email}</td>
-                        <td><button>usuń</button></td>
-                    </tr>
-                </table>
-            </div>
-        
-        
+                <div className='addressBookList'>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>id</th>
+                                <th>imię</th>
+                                <th>nazwisko</th>
+                                <th>numer tel.</th>
+                                <th>email</th>
+                                <th>usuń dane</th>
+                            </tr>
+                                {
+                                    this.state.data.map((person) => {
+                                        return (
+                                            <tr>
+                                                <td key={person.id}>{person.id}</td>
+                                                <td key={person.id + person.name} >{person.name}</td>
+                                                <td key={person.id + person.surname}>{person.surname}</td>
+                                                <td key={person.id + person.phoneNumber}>{person.phoneNumber}</td>
+                                                <td key={person.id + person.email}>{person.email}</td>
+                                                <td><button onClick={this.handleClick}>usuń</button></td>
+                                            </tr>
+                                        )
+                                    })
+                                }         
+                        </tbody>
+                    </table>
+                </div>
             )
-    }
+        }
     }
 }
 
@@ -328,3 +322,4 @@ class ApiBox extends React.Component {
     
 
 export default Section2;
+

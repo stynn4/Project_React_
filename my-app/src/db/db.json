@@ -22,74 +22,11 @@
       "id": 3
     },
     {
-      "name": "",
-      "surname": "",
-      "phoneNumber": "",
-      "email": "",
+      "name": "MArysia",
+      "surname": "Nowak",
+      "phoneNumber": "66666666",
+      "email": "marysia@marysia",
       "id": 4
-    },
-    {
-      "name": "",
-      "surname": "",
-      "phoneNumber": "",
-      "email": "",
-      "id": 5
-    },
-    {
-      "name": "",
-      "surname": "",
-      "phoneNumber": "",
-      "email": "",
-      "id": 6
-    },
-    {
-      "name": "",
-      "surname": "",
-      "phoneNumber": "",
-      "email": "",
-      "id": 7
-    },
-    {
-      "name": "",
-      "surname": "",
-      "phoneNumber": "",
-      "email": "",
-      "id": 8
-    },
-    {
-      "name": "",
-      "surname": "",
-      "phoneNumber": "",
-      "email": "",
-      "id": 9
-    },
-    {
-      "name": "",
-      "surname": "",
-      "phoneNumber": "",
-      "email": "",
-      "id": 10
-    },
-    {
-      "name": "",
-      "surname": "",
-      "phoneNumber": "",
-      "email": "",
-      "id": 11
-    },
-    {
-      "name": "",
-      "surname": "",
-      "phoneNumber": "",
-      "email": "",
-      "id": 12
-    },
-    {
-      "name": "anna",
-      "surname": "Kowlczyk",
-      "phoneNumber": "666 666 888",
-      "email": "anna@kowalczyk",
-      "id": 13
     }
   ]
 }
