@@ -105,7 +105,16 @@ $widthList: map-values($widths);
 .addressBookForm {
     width: 35%;
     padding: 5px;
+    position: relative;
     @include clearFix;
+}
+
+.addressBookForm > div {
+    position: absolute;
+    width: 175px;
+    height: 90px;
+    margin: 275px 0 0 18px;
+    font-size: 16px;
 }
 
 .addressBookForm form {
@@ -130,12 +139,12 @@ $widthList: map-values($widths);
 }
 
 .section2 label input {
-    height: 30px;
-    margin-top: 10px;
+    height: 25px;
+    margin-top: 5px;
     background: map-get($colors, textTyperBackground);
     color: map-get($colors, textTyperColor);
     border: 1px solid map-get($colors, main);
-    font-size: 17px;
+    font-size: 16px;
     padding-left: 3px;
 }
 
@@ -149,7 +158,7 @@ $widthList: map-values($widths);
 // input submit
 .section2 form > input {
     @include button;   
-    margin: 25px 0 10px 200px; 
+    margin: 65px 0 10px 210px; 
     position: relative;
 }
 
@@ -166,6 +175,18 @@ $widthList: map-values($widths);
 .addressBookList table {
     box-shadow: 0 0 5px map-get($colors, main);
 }
+
+.addressBookList button {
+    @include button;
+    margin: -10px 0 0 -10px;
+    padding: 3px;
+    font-size: 12px;
+}
+.addressBookList button:hover {
+    box-shadow: 0 0 5px map-get($colors, textTyperColor);
+    color: map-get($colors, textTyperColor);
+}
+    
 .addressBookList th {
     font-size: 18px;
     color: map-get($colors, main); 

@@ -23,65 +23,27 @@ class Section1 extends React.Component {
 
 
 class EventBox extends React.Component {
-    constructor(props){
-        super(props)
-
-        this.default = {
-            backgroundColor: '',
-            buttonText: 'Button'
-        }
-
-        this.state = {...this.default}
-    }
-
-    mouseEnter = () => {
-        this.setState({
-            backgroundColor: 'rgb(40, 40, 40)'
-        })
-    }
-
-    mouseLeave = () => {
-        this.setState({
-            ...this.default
-
-        })
-    }
-
-    click = () => {
-        this.setState({
-            backgroundColor: 'orange',
-            border: '3px double rbg(100, 100, 100)',
-            buttonText: 'onClick'
-        })
-    }
-
     render(){
-
         return (
             
             <div className='eventBox'>
                 <div className='react'>
-                    <div onMouseEnter={this.mouseEnter} 
-                    onMouseLeave={this.mouseLeave} 
-                    className='box-1'>
-                        <div className='box-2'>
-                            <div className='box-3'>
-                                <div className='box-4'>
-                                    <div className='box-5'>
-                                        <div className='box-6'>
-                                            {this.state.buttonText}
-                                        </div>                                    
-                                    </div>    
-                                </div>    
-                            </div>    
-                        </div>
-                    </div>
+                    <ToDoList/>
                 </div>
                 <div className='codeBox'>
                     <CodeBox brokenCode={codeStringBroken} fullCode={codeStringFull}/>   
                 </div>
             </div>
-            
+        )
+    }
+}
+
+class ToDoList extends React.Component {
+    render(){
+        return (
+            <div>
+                
+            </div>
         )
     }
 }

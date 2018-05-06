@@ -167,7 +167,7 @@ a {
   border: 2px solid #1e1e1e; }
 
 .box-3 {
-  background: #641e1e;
+  background: rgba(100, 30, 30, 0.5);
   padding: 20px;
   border: 2px solid #1e1e1e; }
 
@@ -201,11 +201,19 @@ a {
 
 .addressBookForm {
   width: 35%;
-  padding: 5px; }
+  padding: 5px;
+  position: relative; }
   .addressBookForm::before, .addressBookForm::after {
     clear: both;
     content: '';
     display: block; }
+
+.addressBookForm > div {
+  position: absolute;
+  width: 175px;
+  height: 90px;
+  margin: 275px 0 0 18px;
+  font-size: 16px; }
 
 .addressBookForm form {
   height: 100%;
@@ -224,12 +232,12 @@ a {
   box-shadow: 0 0 5px rgba(192, 159, 11, 0.7); }
 
 .section2 label input {
-  height: 30px;
-  margin-top: 10px;
+  height: 25px;
+  margin-top: 5px;
   background: #282828;
   color: rgba(192, 159, 11, 0.7);
   border: 1px solid rgba(45, 130, 130, 0.5);
-  font-size: 17px;
+  font-size: 16px;
   padding-left: 3px; }
 
 .section2 label input:focus {
@@ -247,7 +255,7 @@ a {
   text-transform: uppercase;
   background: #282828;
   color: rgba(45, 130, 130, 0.5);
-  margin: 25px 0 10px 200px;
+  margin: 65px 0 10px 210px;
   position: relative; }
 
 .section2 form > input:hover {
@@ -260,6 +268,23 @@ a {
 
 .addressBookList table {
   box-shadow: 0 0 5px rgba(45, 130, 130, 0.5); }
+
+.addressBookList button {
+  position: absolute;
+  padding: 5px;
+  border: 0;
+  box-shadow: 0 0 5px rgba(45, 130, 130, 0.5);
+  font-family: SemiBold;
+  text-transform: uppercase;
+  background: #282828;
+  color: rgba(45, 130, 130, 0.5);
+  margin: -10px 0 0 -10px;
+  padding: 3px;
+  font-size: 12px; }
+
+.addressBookList button:hover {
+  box-shadow: 0 0 5px rgba(192, 159, 11, 0.7);
+  color: rgba(192, 159, 11, 0.7); }
 
 .addressBookList th {
   font-size: 18px;

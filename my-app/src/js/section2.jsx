@@ -33,7 +33,7 @@ class EventBox extends React.Component {
         return (
             <div className='eventBox'>
                 <div className='react'>
-                    <AddressBook />
+                    <AddressBook/>
                 </div>
                 <div className='codeBox'>
                     <CodeBox brokenCode={codeStringBroken} fullCode={codeStringFull} />
@@ -95,22 +95,22 @@ class AddressBookForm extends React.Component {
 
         if (this.state.person.name.length === 0) {
             error = true
-            messages.push(<span key='nameError'>Pole 'Imię' nie zostało uzupełnione</span>)
+            messages.push(<span key='nameError'>Wpisz imię; </span>)
         }
 
         if (this.state.person.surname.length === 0) {
             error = true
-            messages.push(<span key='surnameError'>Pole 'Nazwisko' nie zostało uzupełnione</span>)
+            messages.push(<span key='surnameError'>Wpisz nazwisko; </span>)
         }
 
         if (this.state.person.phoneNumber.length !== 9) {
             error = true
-            messages.push(<span key='phoneNumberError'>Pole 'Numer telefonu' musi posiadać 9 cyfr</span>)
+            messages.push(<span key='phoneNumberError'>Numer musi posiadać 9 cyfr; </span>)
         }
 
         if(this.state.person.email.indexOf('@') === -1) {
             error = true
-            messages.push(<span key='emailError'>Wpisz adres mailowy w pole 'email'</span>)
+            messages.push(<span key='emailError'>Wpisz email</span>)
         }
 
         if (error === false) {
@@ -150,7 +150,7 @@ class AddressBookForm extends React.Component {
     render() {
 
         let style = {
-            color: this.state.validationError ? 'red' : 'green'
+            color: this.state.validationError ? 'rgb(140, 30, 30)' : 'rgb(10, 82, 52)'
         }
 
         return (
@@ -282,7 +282,7 @@ class DeleteButton extends React.Component {
 
     render() {
         return (
-            <button onClick={() => { this.handleClick(this.props.index) }}>Usuń</button>
+            <button onClick={() => { this.handleClick(this.props.index) }}>X</button>
         )
     }
 }
