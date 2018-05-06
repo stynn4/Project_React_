@@ -87,7 +87,6 @@ class AddressBookForm extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault(); 
-        console.log(this.state.person)
         
         let people = []
         people.push(this.state.person)
@@ -112,7 +111,6 @@ class AddressBookForm extends React.Component {
 
     
     render(){
-       
         return (
             <div className='addressBookForm'>
                 <form onSubmit={this.handleSubmit}>
@@ -180,19 +178,14 @@ class AddressBookList extends React.Component {
             console.log(data)
             this.setState({
                 data:data
-                
             })/*.catch(err => {
                 console.log(err)
             })*/
         })
     }
 
-    handleClick = () => {
-        console.log('click')
-    }
-
     render(){
-        console.log(this.state.data)
+        
         if(this.state.data === false){
            return <h1 style={{color: 'rgba(45, 130, 130, 0.5)'}}>pobieram dane ...</h1>
         } else {
@@ -211,13 +204,13 @@ class AddressBookList extends React.Component {
                                 {
                                     this.state.data.map((person) => {
                                         return (
-                                            <tr>
-                                                <td key={person.id}>{person.id}</td>
-                                                <td key={person.id + person.name} >{person.name}</td>
-                                                <td key={person.id + person.surname}>{person.surname}</td>
-                                                <td key={person.id + person.phoneNumber}>{person.phoneNumber}</td>
-                                                <td key={person.id + person.email}>{person.email}</td>
-                                                <td><button onClick={this.handleClick}>usuń</button></td>
+                                            <tr key={person.id}>
+                                                <td>{person.id}</td>
+                                                <td>{person.name}</td>
+                                                <td>{person.surname}</td>
+                                                <td>{person.phoneNumber}</td>
+                                                <td>{person.email}</td>
+                                                <td><DeleteButton index={person.id}/></td>
                                             </tr>
                                         )
                                     })
@@ -230,6 +223,25 @@ class AddressBookList extends React.Component {
     }
 }
 
+class DeleteButton extends React.Component {
+
+    handleClick = () => {
+        fetch('http://localhost:3000/addressBook/' + this.props.index, {
+            method: 'DELETE'
+        }).then(function (data) {  
+            console.log('Request success: ', data);  
+          })  
+          .catch(function (error) {  
+            console.log('Request failure: ', error);  
+          });
+    }
+
+    render(){
+        return (
+            <button onClick={() => { this.handleClick(this.props.index) }}>Usuń</button>
+        )
+    } 
+}
 
 // brokenCode for CodeBox
 let codeStringBroken = `

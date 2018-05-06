@@ -1,32 +1,18 @@
 {
   "addressBook": [
     {
-      "name": "Marianna",
+      "name": "Anna",
       "surname": "Nowak",
-      "phoneNumber": "66666666",
-      "email": "marina@gmail.com",
+      "phoneNumber": "555 555 555",
+      "email": "anna@nowak",
       "id": 1
     },
     {
-      "name": "Grzegorz",
-      "surname": "Kowalczyk",
-      "phoneNumber": "3333333333",
-      "email": "grzegotrz@gmail.com",
-      "id": 2
-    },
-    {
-      "name": "Marek ",
-      "surname": "Lis",
-      "phoneNumber": "555555555",
-      "email": "lis@gmail.com",
-      "id": 3
-    },
-    {
-      "name": "MArysia",
+      "name": "Anna",
       "surname": "Nowak",
-      "phoneNumber": "66666666",
-      "email": "marysia@marysia",
-      "id": 4
+      "phoneNumber": "555 555 555",
+      "email": "anna@nowak",
+      "id": 2
     }
   ]
 }
