@@ -21,7 +21,6 @@ class Section1 extends React.Component {
     }
 }
 
-
 class EventBox extends React.Component {
     render(){
         return (
@@ -45,8 +44,7 @@ class ToDoList extends React.Component {
         this.state = {
             tasks: [],
             newTask: {
-                taskDescription: '',
-                done: false
+                taskDescription: ''
             }
         } 
     }
@@ -54,31 +52,32 @@ class ToDoList extends React.Component {
     handleInput = (e) => {
         this.setState({
             newTask: {
-                taskDescription: e.target.value, 
+                taskDescription: e.target.value,
                 status: 'do zrobienia'
             }
         })
+        
     }
-//
+
     handleClick = () => { 
 
         this.state.tasks.push(this.state.newTask)
 
         this.setState({
             newTask: {
-               taskDescription: '', 
-               status: 'do zrobienia'
+               taskDescription: ''
             }
         })
-        console.log(this.state.tasks)
+     console.log(this.state.tasks)
+        
     }
-    
+
     render(){
         
         return (
             <div className='toDoList'>
                 <div className='newTask'>
-                    <h2>Lista rzeczy do zrobienia</h2>
+                    <button>Dodaj zadanie</button>
                     <input 
                     type='text'
                     value={this.state.taskDescription}
@@ -89,16 +88,23 @@ class ToDoList extends React.Component {
                     <button onClick={this.handleClick}>nowe zadanie</button>
                 </div>
 
-                <ul className='taskList'>
-                    {
-                        this.state.tasks.map((task, index) => {
-                            return (
-                                <li key={index}>{task.taskDescription} {task.status}</li>
-                                //<button></button>
-                            )
-                        })
-                    }
-                </ul>
+                <div className='taskList'>
+                    <h2>Lista rzeczy do zrobienia</h2>
+                    <ul>
+                        {
+                            this.state.tasks.map((task, index) => {
+                                return (
+                                
+                                    <li key={index}>
+                                        <p>{task.taskDescription}</p>
+                                        <span>Status: {task.status}</span>
+                                        <button >usuń</button>
+                                    </li> 
+                                )
+                            })
+                        }
+                    </ul>
+                </div>
             </div>
         )
     }

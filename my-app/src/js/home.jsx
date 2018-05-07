@@ -53,6 +53,15 @@ class Underline extends React.Component {
 
     }
 
+    componentWillUnmount(){
+        clearTimeout(this.firstLine)
+        clearTimeout(this.secondLine)
+        clearTimeout(this.thirdLine)
+        clearTimeout(this.fourthLine)
+        clearTimeout(this.fifthLine)
+        clearTimeout(this.sixthLine)
+    }
+
     render(){
 
         let firstLine = {

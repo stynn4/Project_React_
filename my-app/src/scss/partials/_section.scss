@@ -58,32 +58,50 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid red;
 }
 
 .section1 .codeBox {
     @include codeBox;
 }
 
-$widths: (
-  width1: 250px,
-  width2: 225px,
-  width3: 200px,
-  width4: 175px,
-  width5: 150px,
-  width6: 125px
-);
-
-$colorList: map-values($colorsBoxes);
-$widthList: map-values($widths);
-
-@for $X from 1 through 6
-{
-    .box-#{$X} {
-        background: nth($colorList, $X);
-        padding: 20px;
-        border: 2px solid rgb(30, 30, 30);
-    }
+.toDoList {
+    border: 1px solid green;
+    height: 100%;
+    width: 100%;
 }
+
+.taskList > ul{
+    border: 5px dotted brown;
+    display: flex;
+}
+
+.taskList h2 {
+}
+
+.taskList li {
+    border: 1px solid navy;
+    width: 15%;
+    height: 40%;
+    font-size: 15px;
+}
+
+.newTask {
+    height: 20%;
+    width: 100%;
+    border: 1px solid yellow;
+}
+
+.taskList {
+    height: 80%;
+    width: 100%;
+    border: 1px solid orange;
+}
+
+.taskList {
+
+}
+
 
 
 // the second section*************************************************************
