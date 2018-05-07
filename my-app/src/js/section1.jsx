@@ -59,7 +59,7 @@ class ToDoList extends React.Component {
             }
         })
     }
-
+//
     handleClick = () => { 
 
         this.state.tasks.push(this.state.newTask)
