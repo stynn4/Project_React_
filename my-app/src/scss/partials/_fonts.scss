@@ -46,12 +46,21 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Kaushan';
+    src: url('../fonts/KaushanScript-Regular.woff2') format('woff2'),
+        url('../fonts/KaushanScript-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 $fonts: (
     font1: Regular,
     font2: Light,
     font3: Thin,
     font4: SemiBold,
     font5: Bold,
-    font6: Courier Prime Code
+    font6: Courier Prime Code,
+    font7: Kaushan
 );
 

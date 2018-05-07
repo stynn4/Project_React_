@@ -52,8 +52,7 @@ class ToDoList extends React.Component {
     handleInput = (e) => {
         this.setState({
             newTask: {
-                taskDescription: e.target.value,
-                status: 'do zrobienia'
+                taskDescription: e.target.value
             }
         })
         
@@ -77,33 +76,38 @@ class ToDoList extends React.Component {
         return (
             <div className='toDoList'>
                 <div className='newTask'>
-                    <button>Dodaj zadanie</button>
-                    <input 
-                    type='text'
-                    value={this.state.taskDescription}
-                    onChange={this.handleInput}
-                    id='taskDescription'
-                    placeholder='wpisz nowe zadanie'
-                    />
-                    <button onClick={this.handleClick}>nowe zadanie</button>
+                    <button>nowe zadanie</button>
+                    <form>
+                        <input 
+                        type='text'
+                        value={this.state.taskDescription}
+                        onChange={this.handleInput}
+                        id='taskDescription'
+                        placeholder='wpisz nowe zadanie'
+                        />
+                        <button onClick={this.handleClick}>dodaj zadanie</button>
+                    </form>
                 </div>
 
                 <div className='taskList'>
                     <h2>Lista rzeczy do zrobienia</h2>
+                    <Scrollbars>
                     <ul>
                         {
                             this.state.tasks.map((task, index) => {
                                 return (
                                 
                                     <li key={index}>
-                                        <p>{task.taskDescription}</p>
-                                        <span>Status: {task.status}</span>
-                                        <button >usuń</button>
+                                        <div>{task.taskDescription}</div>
+                                        <div>
+                                        <button>x</button>
+                                        </div>
                                     </li> 
                                 )
                             })
                         }
                     </ul>
+                    </Scrollbars>
                 </div>
             </div>
         )

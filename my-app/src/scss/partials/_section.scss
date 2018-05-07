@@ -58,7 +58,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
 }
 
 .section1 .codeBox {
@@ -66,24 +65,8 @@
 }
 
 .toDoList {
-    border: 1px solid green;
     height: 100%;
     width: 100%;
-}
-
-.taskList > ul{
-    border: 5px dotted brown;
-    display: flex;
-}
-
-.taskList h2 {
-}
-
-.taskList li {
-    border: 1px solid navy;
-    width: 15%;
-    height: 40%;
-    font-size: 15px;
 }
 
 .newTask {
@@ -92,15 +75,58 @@
     border: 1px solid yellow;
 }
 
+.newTask button {
+    @include button;
+}
+
 .taskList {
     height: 80%;
     width: 100%;
-    border: 1px solid orange;
 }
 
-.taskList {
-
+.taskList ul {
+    @include clearFix;
 }
+
+.taskList h2 {
+    color: map-get($colors, main);
+    font-family: map-get($fonts, font5);
+    margin-left: 10px;
+}
+
+.taskList li {
+    width: 15%;
+    height: 40%;
+    float: left;
+    position: relative;
+    padding: 10px 5px 10px 5px;
+    margin: 1% 2.5%;
+    font-size: 15px;
+    background: map-get($colors, notesBackground);
+    box-shadow: 5px 5px 5px map-get($colors, notesShadow);    
+}
+
+.taskList li > div:first-of-type {
+    font-family: map-get($fonts, font7);
+    height: 85%;
+}
+
+.taskList li > div:last-of-type {
+    position: absolute;
+    margin-left: 105px;
+    height: 15%;
+}
+
+.taskList button { 
+    border: none;
+    background: transparent;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+
+
+
 
 
 
