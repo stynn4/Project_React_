@@ -39,14 +39,71 @@ class EventBox extends React.Component {
 }
 
 class ToDoList extends React.Component {
+    constructor(props){
+        super(props)
+
+        this.state = {
+            tasks: [],
+            newTask: {
+                taskDescription: '',
+                done: false
+            }
+        } 
+    }
+
+    handleInput = (e) => {
+        this.setState({
+            newTask: {
+                taskDescription: e.target.value, 
+                status: 'do zrobienia'
+            }
+        })
+    }
+
+    handleClick = () => { 
+
+        this.state.tasks.push(this.state.newTask)
+
+        this.setState({
+            newTask: {
+               taskDescription: '', 
+               status: 'do zrobienia'
+            }
+        })
+        console.log(this.state.tasks)
+    }
+    
     render(){
+        
         return (
-            <div>
-                
+            <div className='toDoList'>
+                <div className='newTask'>
+                    <h2>Lista rzeczy do zrobienia</h2>
+                    <input 
+                    type='text'
+                    value={this.state.taskDescription}
+                    onChange={this.handleInput}
+                    id='taskDescription'
+                    placeholder='wpisz nowe zadanie'
+                    />
+                    <button onClick={this.handleClick}>nowe zadanie</button>
+                </div>
+
+                <ul className='taskList'>
+                    {
+                        this.state.tasks.map((task, index) => {
+                            return (
+                                <li key={index}>{task.taskDescription} {task.status}</li>
+                                //<button></button>
+                            )
+                        })
+                    }
+                </ul>
             </div>
         )
     }
 }
+
 
 // brokenCode for CodeBox
 let codeStringBroken = `
