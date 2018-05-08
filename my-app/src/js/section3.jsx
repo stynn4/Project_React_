@@ -16,12 +16,10 @@ import { Scrollbars } from 'react-custom-scrollbars';
 // main section
 class Section3 extends React.Component {
     render(){
-        const text = 'to jest tekst texttyper'
         return (
             <section className='container section3'>
                 <TextTyper  text={text}/>
                 <EventBox/>
-
             </section>
         )
     }
@@ -63,7 +61,6 @@ class ApiBox extends React.Component {
             return response.json()
         }).then(data => {
             console.log(data)
-            
             this.setState({
                 data:data
             })/*.catch(err => {
@@ -91,7 +88,9 @@ class ApiBox extends React.Component {
         } else {
             return (
                 <div className='apiBox'>
+
                     <p>Tytuł zdjęcia: {this.state.data.title}</p>
+
                     <div>
 
                         <a href={this.state.data.url}
@@ -124,6 +123,11 @@ class ApiBox extends React.Component {
 }     
 
 
+// text for TextTyper
+const text = `************************ //dane pobrane przy użyciu metody fetch()// ************************ //zapytanie wysłane pod adres
+https://api.nasa.gov// ************************ 
+//odpowiedź => obiekt Response w formacie json// ************************ //kolejna odpowiedź => kolejny obiekt
+w formacie tekstowym// ************************`
 
 // brokenCode for CodeBox
 let codeStringBroken = `
@@ -149,11 +153,11 @@ class ApiBox extends React.Component {
  
     componentDidMount(){
         
-        fetch('https://api.nasa.gov/planetary/apod?api_key=HcI9D0bdacVk9icon6WnwhapN5GAhXM28Rx9YuH3').then(response => {
+        fetch('https://api.nasa.gov/planetary/apod?api_
+        key=HcI9D0bdacVk9icon6WnwhapN5GAhXM28Rx9YuH3').then(response => {
             return response.json()
         }).then(data => {
             console.log(data)
-            
             this.setState({
                 data:data
             })/*.catch(err => {
@@ -174,7 +178,6 @@ class ApiBox extends React.Component {
         })
     }
         
-
     render(){
 
         if(this.state.data === false){
@@ -182,7 +185,9 @@ class ApiBox extends React.Component {
         } else {
             return (
                 <div className='apiBox'>
+
                     <p>Tytuł zdjęcia: {this.state.data.title}</p>
+
                     <div>
 
                         <a href={this.state.data.url}

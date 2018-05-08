@@ -14,16 +14,16 @@ class Header extends React.Component {
             <nav className='header'>
                 <ul className='container'>
                     <li className='shadow'>
-                        <NavLink activeStyle={activeStyle} exact to='/'>Home</NavLink>
+                        <NavLink activeStyle={activeStyle} exact to='/'>React</NavLink>
                     </li>
                     <li className='shadow'>
-                        <NavLink activeStyle={activeStyle} to='/section1'>Section1</NavLink>
+                        <NavLink activeStyle={activeStyle} to='/section1'>Local Storage?</NavLink>
                     </li>
                     <li className='shadow'>
-                        <NavLink activeStyle={activeStyle} to='/section2'>Section2</NavLink>
+                        <NavLink activeStyle={activeStyle} to='/section2'>JSON Server</NavLink>
                     </li>
                     <li className='shadow'> 
-                        <NavLink activeStyle={activeStyle} to='/section3'>Section3</NavLink>
+                        <NavLink activeStyle={activeStyle} to='/section3'>NASA API</NavLink>
                     </li>
                 </ul>
             </nav>

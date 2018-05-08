@@ -10,8 +10,6 @@ import { Scrollbars } from 'react-custom-scrollbars';
 class Section1 extends React.Component {
     render(){
         
-        const text = '=> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
-
         return (
             <section className='container section1'>
                 <TextTyper text={text}/>
@@ -77,8 +75,6 @@ class ToDoList extends React.Component {
             formClassName: 'hideForm',
             newTaskClassName: 'showButton'
         })
-     console.log(this.state.tasks)
-        
     }
 
 
@@ -103,21 +99,21 @@ class ToDoList extends React.Component {
                 <div className='taskList'>
                     <h2>Lista rzeczy do zrobienia</h2>
                     <Scrollbars>
-                    <ul>
-                        {
-                            this.state.tasks.map((task, index) => {
-                                return (
-                                
-                                    <li key={index} className={this.state.notesClassname}>
-                                        <div>{task.taskDescription}</div>
-                                        <div>
-                                        <button>x</button>
-                                        </div>
-                                    </li> 
-                                )
-                            })
-                        }
-                    </ul>
+                        <ul>
+                            {
+                                this.state.tasks.map((task, index) => {
+                                    return (
+                                    
+                                        <li key={index} className={this.state.notesClassname}>
+                                            <div>{task.taskDescription}</div>
+                                            <div>
+                                            <button>x</button>
+                                            </div>
+                                        </li> 
+                                    )
+                                })
+                            }
+                        </ul>
                     </Scrollbars>
                 </div>
             </div>
@@ -125,6 +121,13 @@ class ToDoList extends React.Component {
     }
 }
 
+
+// text for textTyper
+const text = `************************ //pole do wpisania zadania po naciśnięciu
+przycisku nowe zadanie// ************************ //przycisk dodaj zadanie => dodanie 
+nowego elementu do tablicy tasks oraz wygenerowanie nowego elementu listy w sekcji
+Lista rzeczy do zrobienia// ************************ //w planach local storage// 
+************************`
 
 // brokenCode for CodeBox
 let codeStringBroken = `
@@ -139,84 +142,90 @@ class ApiBox extends React.Component {
 
 //fullCode for CodeBox
 let codeStringFull = `
-class ApiBox extends React.Component {
+class ToDoList extends React.Component {
     constructor(props){
         super(props)
 
         this.state = {
-            data: false
-        }
+            tasks: [],
+            newTask: {
+                taskDescription: ''
+            },
+            formClassName: 'hideForm',
+            newTaskClassName: 'showButton'
+        } 
     }
- 
-    componentDidMount(){
-        
-        fetch('https://api.nasa.gov/planetary/apod?api_key=HcI9D0bdacVk9icon6WnwhapN5GAhXM28Rx9YuH3').then(response => {
-            return response.json()
-        }).then(data => {
-            console.log(data)
-            
-            this.setState({
-                data:data
-            })/*.catch(err => {
-                console.log(err)
-            })*/
+
+    showForm = () => {
+        this.setState({
+            formClassName: 'showForm',
+            newTaskClassName: 'hideButton'
         })
     }
 
-    mouseEnter = () => {
+    handleInput = (e) => {
         this.setState({
-            text: 'powiększ zdjęcie'
+            newTask: {
+                taskDescription: e.target.value
+            }
+        })  
+    }
+
+    addNewTask = () => { 
+
+        this.state.tasks.push(this.state.newTask)
+
+        this.setState({
+            newTask: {
+               taskDescription: ''
+            },
+            formClassName: 'hideForm',
+            newTaskClassName: 'showButton'
         })
     }
 
-    mouseLeave = () => {
-        this.setState({
-            text: ''
-        })
-    }
-        
 
     render(){
-
-        if(this.state.data === false){
-            return <h1 style={{color: 'rgba(45, 130, 130, 0.5)'}}>pobieram dane ...</h1>
-        } else {
-            return (
-                <div className='apiBox'>
-                    <p>Tytuł zdjęcia: {this.state.data.title}</p>
-                    <div>
-
-                        <a href={this.state.data.url}
-                        onMouseEnter={this.mouseEnter} 
-                        onMouseLeave={this.mouseLeave}>
-                            <img src={this.state.data.url} 
-                            alt='nasaImageOfTheDay'/>
-                        </a>
-
-                        <p className='textBeforeImg'>{this.state.text}</p>
-                        <h4>Zdjęcie dnia: </h4>
-                        <p>{this.state.data.date}</p>
-                        <h4>Copyright: </h4>
-                        <p>{this.state.data.copyright}</p>
-
-                    </div>
-
-                    <div>
-
-                        <h4>Opis: </h4>
-                        <Scrollbars style={{height: 255}}>
-                            <p>{this.state.data.explanation}</p>
-                        </Scrollbars>
-
-                    </div>
+        
+        return (
+            <div className='toDoList'>
+                <div className='newTask'>
+                    <button className={this.state.newTaskClassName} onClick={this.showForm}>nowe zadanie</button>
+                    <form className={this.state.formClassName}>
+                        <input 
+                        type='text'
+                        value={this.state.taskDescription}
+                        onChange={this.handleInput}
+                        id='taskDescription'
+                        placeholder='wpisz nowe zadanie'
+                        />
+                        <button onClick={this.addNewTask}>dodaj zadanie</button>
+                    </form>
                 </div>
-		    )         
-        }
+
+                <div className='taskList'>
+                    <h2>Lista rzeczy do zrobienia</h2>
+                    <Scrollbars>
+                        <ul>
+                            {
+                                this.state.tasks.map((task, index) => {
+                                    return (
+                                    
+                                        <li key={index} className={this.state.notesClassname}>
+                                            <div>{task.taskDescription}</div>
+                                            <div>
+                                            <button>x</button>
+                                            </div>
+                                        </li> 
+                                    )
+                                })
+                            }
+                        </ul>
+                    </Scrollbars>
+                </div>
+            </div>
+        )
     }
 }`
 
 export default Section1;
-
-           
-
-

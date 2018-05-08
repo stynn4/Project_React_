@@ -6,6 +6,13 @@
       "phoneNumber": "666888777",
       "email": "marianna@nowak",
       "id": 1
+    },
+    {
+      "name": "Danuta",
+      "surname": "Dygant",
+      "phoneNumber": "654789123",
+      "email": "danuta@gmail.com",
+      "id": 3
     }
   ]
 }

@@ -74,7 +74,7 @@ li {
   height: 100%;
   width: 200px;
   float: left;
-  padding: 35px 40px 35px 40px;
+  padding: 35px 10px 35px 10px;
   background: #2d2d2d;
   font-size: 25px; }
 
@@ -122,10 +122,11 @@ a {
 .textTyper {
   width: 25%;
   height: 100%;
-  padding: 50px 30px 20px 30px;
+  padding: 30px 30px 20px 30px;
   background: #282828;
   color: rgba(192, 159, 11, 0.7);
-  font-size: 18px;
+  font-family: Courier Prime Code;
+  font-size: 17px;
   line-height: 25px; }
 
 .react {
@@ -167,15 +168,25 @@ a {
   width: 100%; }
 
 .newTask {
-  height: 20%;
-  width: 100%;
-  border: 1px solid yellow; }
+  height: 35%;
+  width: 100%; }
 
 .newTask .hideForm {
   display: none; }
 
 .newTask .showForm {
-  display: block; }
+  display: block;
+  height: 100%; }
+
+.newTask .showForm > input {
+  height: 80%;
+  width: 15%;
+  margin: 1.5% 2.5%;
+  font-size: 15px;
+  background: #ebee51;
+  box-shadow: 5px 5px 5px #050505;
+  border: none;
+  font-family: Kaushan; }
 
 .newTask .showForm > button {
   position: absolute;
@@ -186,7 +197,7 @@ a {
   text-transform: uppercase;
   background: #282828;
   color: rgba(45, 130, 130, 0.5);
-  margin: 25px 0 0 10px; }
+  margin: 7% 0 0 1%; }
 
 .newtask form {
   position: relative; }
@@ -201,7 +212,7 @@ a {
   background: #282828;
   color: rgba(45, 130, 130, 0.5);
   display: block;
-  margin: 25px 0 0 10px; }
+  margin: 7% 0 0 1%; }
 
 .newTask .hideButton {
   display: none; }
@@ -211,7 +222,7 @@ a {
   color: rgba(192, 159, 11, 0.7); }
 
 .taskList {
-  height: 80%;
+  height: 65%;
   width: 100%; }
 
 .taskList ul::before, .taskList ul::after {

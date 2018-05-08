@@ -23,7 +23,7 @@ class TextTyper extends React.Component {
                     clearInterval(this.interval)
             })
 
-        }, 100)
+        }, 75)
 
     }
 

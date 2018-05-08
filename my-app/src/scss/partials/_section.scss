@@ -70,9 +70,8 @@
 }
 
 .newTask {
-    height: 20%;
+    height: 35%;
     width: 100%;
-    border: 1px solid yellow;
 }
 
 .newTask .hideForm {
@@ -81,15 +80,26 @@
 
 .newTask .showForm {
     display: block;
+    height: 100%;
 }
 
 .newTask .showForm > input {
-    
+    height: 80%;
+    width: 15%;
+    margin: 1.5% 2.5%;
+    font-size: 15px;
+    background: map-get($colors, notesBackground);
+    box-shadow: 5px 5px 5px map-get($colors, notesShadow);
+    border: none;
+    font-family: map-get($fonts, font7);
+}
+
+.newTask .showForm > input:focus {
 }
 
 .newTask .showForm > button {
     @include button;
-    margin: 25px 0 0 10px;
+    margin: 7% 0 0 1%;
 }
 
 .newtask form {
@@ -99,7 +109,7 @@
 .newTask .showButton {
     @include button;
     display: block;
-    margin: 25px 0 0 10px;
+    margin: 7% 0 0 1%;
 }
 
 .newTask .hideButton {
@@ -111,7 +121,7 @@
 }
 
 .taskList {
-    height: 80%;
+    height: 65%;
     width: 100%;
 }
 
