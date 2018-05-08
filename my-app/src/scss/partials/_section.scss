@@ -75,8 +75,39 @@
     border: 1px solid yellow;
 }
 
-.newTask button {
+.newTask .hideForm {
+    display: none;
+}
+
+.newTask .showForm {
+    display: block;
+}
+
+.newTask .showForm > input {
+    
+}
+
+.newTask .showForm > button {
     @include button;
+    margin: 25px 0 0 10px;
+}
+
+.newtask form {
+    position: relative;
+}
+
+.newTask .showButton {
+    @include button;
+    display: block;
+    margin: 25px 0 0 10px;
+}
+
+.newTask .hideButton {
+    display: none;
+}
+
+.newTask button:hover {
+    @include buttonHover;
 }
 
 .taskList {
@@ -91,7 +122,7 @@
 .taskList h2 {
     color: map-get($colors, main);
     font-family: map-get($fonts, font5);
-    margin-left: 10px;
+    margin: 10px 0 0 10px;
 }
 
 .taskList li {
@@ -227,8 +258,7 @@
     font-size: 12px;
 }
 .addressBookList button:hover {
-    box-shadow: 0 0 5px map-get($colors, textTyperColor);
-    color: map-get($colors, textTyperColor);
+    @include buttonHover;
 }
     
 .addressBookList th {
@@ -383,8 +413,7 @@
 
 //hover for two buttons
 .codeBox > div > button:hover, .codeBox .fullCodeShow > button:hover {
-    box-shadow: 0 0 5px map-get($colors, textTyperColor);
-    color: map-get($colors, textTyperColor);
+    @include buttonHover;
 }
 
 

@@ -45,8 +45,17 @@ class ToDoList extends React.Component {
             tasks: [],
             newTask: {
                 taskDescription: ''
-            }
+            },
+            formClassName: 'hideForm',
+            newTaskClassName: 'showButton'
         } 
+    }
+
+    showForm = () => {
+        this.setState({
+            formClassName: 'showForm',
+            newTaskClassName: 'hideButton'
+        })
     }
 
     handleInput = (e) => {
@@ -54,30 +63,32 @@ class ToDoList extends React.Component {
             newTask: {
                 taskDescription: e.target.value
             }
-        })
-        
+        })  
     }
 
-    handleClick = () => { 
+    addNewTask = () => { 
 
         this.state.tasks.push(this.state.newTask)
 
         this.setState({
             newTask: {
                taskDescription: ''
-            }
+            },
+            formClassName: 'hideForm',
+            newTaskClassName: 'showButton'
         })
      console.log(this.state.tasks)
         
     }
+
 
     render(){
         
         return (
             <div className='toDoList'>
                 <div className='newTask'>
-                    <button>nowe zadanie</button>
-                    <form>
+                    <button className={this.state.newTaskClassName} onClick={this.showForm}>nowe zadanie</button>
+                    <form className={this.state.formClassName}>
                         <input 
                         type='text'
                         value={this.state.taskDescription}
@@ -85,7 +96,7 @@ class ToDoList extends React.Component {
                         id='taskDescription'
                         placeholder='wpisz nowe zadanie'
                         />
-                        <button onClick={this.handleClick}>dodaj zadanie</button>
+                        <button onClick={this.addNewTask}>dodaj zadanie</button>
                     </form>
                 </div>
 
@@ -97,7 +108,7 @@ class ToDoList extends React.Component {
                             this.state.tasks.map((task, index) => {
                                 return (
                                 
-                                    <li key={index}>
+                                    <li key={index} className={this.state.notesClassname}>
                                         <div>{task.taskDescription}</div>
                                         <div>
                                         <button>x</button>

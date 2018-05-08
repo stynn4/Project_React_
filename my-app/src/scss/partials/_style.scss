@@ -84,3 +84,8 @@
   color: map-get($colors, main);
 }
 
+@mixin buttonHover() {
+  box-shadow: 0 0 5px map-get($colors, textTyperColor);
+  color: map-get($colors, textTyperColor);
+}
+
