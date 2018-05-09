@@ -5,7 +5,7 @@
 }
 
 .home > p {
-    font-size: 120px;
+    font-size: 7.5rem;
     text-transform: uppercase;
     color: map-get($colors, main);
     margin-left: 50px;
@@ -314,7 +314,7 @@
 //titleOfPhoto
 .section3 .apiBox > p {
     margin: 10px 0 10px 0;
-    font-size: 25px;
+    font-size: 1.5rem;
     color: map-get($colors, main);
     font-weight: bold;
 }

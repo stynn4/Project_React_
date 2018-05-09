@@ -137,7 +137,8 @@ class ApiBox extends React.Component {
 
         this.state = {
             data: false
-        }`
+        }
+    }`
 
 
 //fullCode for CodeBox
