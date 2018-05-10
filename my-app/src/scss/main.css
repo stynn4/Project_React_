@@ -142,7 +142,7 @@ a {
   height: 30%;
   width: 100%;
   position: relative;
-  border-top: 0.1rem solid #282828;
+  border-top: 0.2rem solid #282828;
   font-size: 0.9rem; }
 
 .section1 {
@@ -160,7 +160,7 @@ a {
   height: 30%;
   width: 100%;
   position: relative;
-  border-top: 0.1rem solid #282828;
+  border-top: 0.2rem solid #282828;
   font-size: 0.9rem; }
 
 .toDoList {
@@ -283,12 +283,11 @@ a {
     content: '';
     display: block; }
 
-.addressBookForm > div {
+.addressBookForm > div:first-of-type {
   position: absolute;
   width: 175px;
-  height: 90px;
-  margin: 275px 0 0 18px;
-  font-size: 16px; }
+  margin: 250px 0 0 18px;
+  font-size: 14px; }
 
 .addressBookForm form {
   height: 100%;
@@ -297,10 +296,14 @@ a {
 .addressBookForm form:hover {
   box-shadow: 0 0 5px rgba(192, 159, 11, 0.7); }
 
+.addressBookForm h3 {
+  color: rgba(45, 130, 130, 0.5);
+  margin-bottom: 5px; }
+
 .section2 label {
   float: left;
-  padding: 3px 10px 7px 10px;
-  margin: 10px 80px 0 10px;
+  padding: 2px 10px 7px 10px;
+  margin: 3px 80px 0 10px;
   color: rgba(45, 130, 130, 0.5); }
 
 .section2 label:hover {
@@ -344,6 +347,10 @@ a {
 .addressBookList table {
   box-shadow: 0 0 5px rgba(45, 130, 130, 0.5); }
 
+.addressBookList h3 {
+  color: rgba(45, 130, 130, 0.5);
+  margin-bottom: 5px; }
+
 .addressBookList button {
   position: absolute;
   padding: 0.3rem;
@@ -364,7 +371,7 @@ a {
 .addressBookList th {
   font-size: 18px;
   color: rgba(45, 130, 130, 0.5);
-  padding: 20px 0 20px 0;
+  padding: 5px 0 5px 0;
   text-align: left; }
 
 .addressBookList th:last-of-type {

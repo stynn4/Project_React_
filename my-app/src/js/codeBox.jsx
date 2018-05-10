@@ -35,7 +35,11 @@ class CodeBox extends React.Component {
 
                 <SyntaxHighlighter  
                 language='javascript' 
-                style={atelierSavannaDark}>
+                style={atelierSavannaDark}
+                customStyle={{background: 'rgb(30, 30, 30)'}}
+                showLineNumbers={true}
+                lineNumberStyle={{color: 'rgba(120, 120, 120, 0.3)',
+                margin: '0 15px'}}>
                     {this.props.brokenCode}
                 </SyntaxHighlighter>
 
@@ -44,13 +48,19 @@ class CodeBox extends React.Component {
                 </button>
 
                 <div className={this.state.className}>
-                    
+                    <Scrollbars>
                     <SyntaxHighlighter 
                     className='syntaxHighlighter'
                     language='javascript' 
-                    style={atelierSavannaDark}>
+                    style={atelierSavannaDark} 
+                    customStyle={{overflowX: 'none', 
+                    background: 'rgb(40, 40, 40)'}}
+                    showLineNumbers={true}
+                    lineNumberStyle={{color: 'rgba(120, 120, 120, 0.3)', margin: '0 15px'}}>
                         {this.props.fullCode}
                     </SyntaxHighlighter>
+                    </Scrollbars>
+
                     
                     <button onClick={this.hideCode}>
                         ukryj kod

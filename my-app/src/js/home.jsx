@@ -12,9 +12,10 @@ class Underline extends React.Component {
             line: 1
         }
     }
-
+    
     componentDidMount(){
-
+        
+       
         this.firstLine = setTimeout(()=>{
             this.setState({
                 line: 1
@@ -54,13 +55,22 @@ class Underline extends React.Component {
     }
 
     componentWillUnmount(){
+        const liness = [this.firstLine, this.secondLine, this.thirdLine, this.fourthLine, this.fifthLine, this.sixthLine]
+        {
+            liness.map((item) => {
+                clearTimeout(item)
+                console.log('clear')
+            })
+            
+        }/*
         clearTimeout(this.firstLine)
         clearTimeout(this.secondLine)
         clearTimeout(this.thirdLine)
         clearTimeout(this.fourthLine)
         clearTimeout(this.fifthLine)
-        clearTimeout(this.sixthLine)
+        clearTimeout(this.sixthLine)*/
     }
+
 
     render(){
 
@@ -167,21 +177,24 @@ class Underline extends React.Component {
             }
 
         }
-        return (
+
+        const lines = [firstLine, secondLine, thirdLine, fourthLine, fifthLine, sixthLine]
         
+        return (
+
             <div className='underline'>
-                    <div style={firstLine}/>
-                    <div style={secondLine}/>
-                    <div style={thirdLine}/>
-                    <div style={fourthLine}/>
-                    <div style={fifthLine}/>
-                    <div style={sixthLine}/>
+                {
+                    lines.map((item, index) => {
+                        return (
+                            <div key={index} style={item}/>
+                        )
+                    }) 
+                }
             </div>
           
         )
     }
 }
-
 
 class Home extends React.Component {
     render(){

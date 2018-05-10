@@ -93,26 +93,26 @@ class AddressBookForm extends React.Component {
 
         if (this.state.person.name.length === 0) {
             error = true
-            messages.push(<span key='nameError'>Wpisz imię; </span>)
+            messages.push(<div key='nameError'>Wpisz imię; </div>)
         }
 
         if (this.state.person.surname.length === 0) {
             error = true
-            messages.push(<span key='surnameError'>Wpisz nazwisko; </span>)
+            messages.push(<div key='surnameError'>Wpisz nazwisko; </div>)
         }
 
         if (this.state.person.phoneNumber.length !== 9) {
             error = true
-            messages.push(<span key='phoneNumberError'>Numer musi posiadać 9 cyfr; </span>)
+            messages.push(<div key='phoneNumberError'>Numer musi posiadać 9 cyfr; </div>)
         }
 
         if(this.state.person.email.indexOf('@') === -1) {
             error = true
-            messages.push(<span key='emailError'>Wpisz email</span>)
+            messages.push(<div key='emailError'>Wpisz email</div>)
         }
 
         if (error === false) {
-            messages.push(<span key='success'>Dodano nowe dane kontaktowe</span>)
+            messages.push(<div key='success'>Dodano nowe dane kontaktowe</div>)
 
             let people = []
 
@@ -153,10 +153,15 @@ class AddressBookForm extends React.Component {
 
         return (
             <div className='addressBookForm'>
+            
+                <h3>Formularz</h3>
+
                 <div style={style}>
                     {this.state.validationMessages}
                 </div>
+
                 <form onSubmit={this.handleSubmit}>
+
                     <label>
                         Imię:
                         <input type='text'
@@ -234,8 +239,9 @@ class AddressBookList extends React.Component {
         } else {
             return (
                 <div className='addressBookList'>
+                    <h3>Lista danych kontaktowych</h3>
                     <table>
-                        <tbody>
+                        <thead>
                             <tr>
                                 <th>id</th>
                                 <th>imię</th>
@@ -244,6 +250,8 @@ class AddressBookList extends React.Component {
                                 <th>email</th>
                                 <th>usuń dane</th>
                             </tr>
+                        </thead>
+                        <tbody>    
                             {
                                 this.state.data.map((person) => {
                                     return (

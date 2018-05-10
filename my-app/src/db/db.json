@@ -13,6 +13,13 @@
       "phoneNumber": "654789123",
       "email": "danuta@gmail.com",
       "id": 3
+    },
+    {
+      "name": "Sandra",
+      "surname": "Huk",
+      "phoneNumber": "654654654",
+      "email": "sandra@gmail.com",
+      "id": 4
     }
   ]
 }

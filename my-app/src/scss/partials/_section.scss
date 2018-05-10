@@ -94,9 +94,6 @@
     font-family: map-get($fonts, font7);
 }
 
-.newTask .showForm > input:focus {
-}
-
 .newTask .showForm > button {
     @include button;
     margin: 7% 0 0 1%;
@@ -167,10 +164,6 @@
 
 
 
-
-
-
-
 // the second section*************************************************************
 
 .section2 {
@@ -194,28 +187,31 @@
     @include clearFix;
 }
 
-.addressBookForm > div {
+.addressBookForm > div:first-of-type {
     position: absolute;
     width: 175px;
-    height: 90px;
-    margin: 275px 0 0 18px;
-    font-size: 16px;
+    margin: 250px 0 0 18px;
+    font-size: 14px;
 }
 
 .addressBookForm form {
     height: 100%;
     box-shadow: 0 0 5px map-get($colors, main);
-    
 }
 
 .addressBookForm form:hover {
     box-shadow: 0 0 5px map-get($colors, textTyperColor);
 }
 
+.addressBookForm h3 {
+    color: map-get($colors, main);
+    margin-bottom: 5px;
+}
+
 .section2 label {
     float: left;
-    padding: 3px 10px 7px 10px;
-    margin: 10px 80px 0 10px;
+    padding: 2px 10px 7px 10px;
+    margin: 3px 80px 0 10px;
     color: map-get($colors, main);
 }
 
@@ -261,6 +257,11 @@
     box-shadow: 0 0 5px map-get($colors, main);
 }
 
+.addressBookList h3 {
+    color: map-get($colors, main);
+    margin-bottom: 5px;
+}
+
 .addressBookList button {
     @include button;
     margin: -10px 0 0 -10px;
@@ -274,7 +275,7 @@
 .addressBookList th {
     font-size: 18px;
     color: map-get($colors, main); 
-    padding: 20px 0 20px 0;
+    padding: 5px 0 5px 0;
     text-align: left;
 }
 
