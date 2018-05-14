@@ -55,20 +55,13 @@ class Underline extends React.Component {
     }
 
     componentWillUnmount(){
-        const liness = [this.firstLine, this.secondLine, this.thirdLine, this.fourthLine, this.fifthLine, this.sixthLine]
-        {
-            liness.map((item) => {
-                clearTimeout(item)
-                console.log('clear')
-            })
-            
-        }/*
+       
         clearTimeout(this.firstLine)
         clearTimeout(this.secondLine)
         clearTimeout(this.thirdLine)
         clearTimeout(this.fourthLine)
         clearTimeout(this.fifthLine)
-        clearTimeout(this.sixthLine)*/
+        clearTimeout(this.sixthLine)
     }
 
 
@@ -200,7 +193,7 @@ class Home extends React.Component {
     render(){
         return (
             <div className='container home'>
-                <p>Home</p>
+                <p>react</p>
                 <Underline firstLineTime={1} 
                 border={'10px solid rgba(45, 130, 130, 0.3)'}
                 secondLineTime={1.5} 
