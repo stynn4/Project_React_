@@ -4,7 +4,7 @@ import TextTyper from './textTyper.jsx';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atelierSavannaDark } from 'react-syntax-highlighter/styles/hljs';
 import { Scrollbars } from 'react-custom-scrollbars';
-
+import pencil from '../img/icons8-pencil-50.png';
 
 
 class Section1 extends React.Component {
@@ -41,9 +41,7 @@ class ToDoList extends React.Component {
 
         this.state = {
             tasks: [],
-            newTask: {
-                taskDescription: ''
-            },
+            taskDescription: '',
             formClassName: 'hideForm',
             newTaskClassName: 'showButton'
         } 
@@ -58,25 +56,33 @@ class ToDoList extends React.Component {
 
     handleInput = (e) => {
         this.setState({
-            newTask: {
-                taskDescription: e.target.value
-            }
+            taskDescription: e.target.value
         })  
     }
 
     addNewTask = () => { 
 
-        this.state.tasks.push(this.state.newTask)
+        this.state.tasks.push(this.state.taskDescription)
 
         this.setState({
-            newTask: {
-               taskDescription: ''
-            },
+            taskDescription: '',
             formClassName: 'hideForm',
             newTaskClassName: 'showButton'
         })
+        console.log(this.state.tasks)
     }
 
+    removeTask = (task) => {
+       
+        const tasksAfterRemove = this.state.tasks.filter((element) => {
+            return element !== task
+        })
+
+        this.setState({
+            tasks: tasksAfterRemove
+        })
+       
+    }
 
     render(){
         
@@ -104,10 +110,12 @@ class ToDoList extends React.Component {
                                 this.state.tasks.map((task, index) => {
                                     return (
                                     
-                                        <li key={index} className={this.state.notesClassname}>
-                                            <div>{task.taskDescription}</div>
+                                        <li key={task + index} >
+                                            <div contentEditable={false}>{task}</div>
                                             <div>
-                                            <button>x</button>
+                                            <button onClick={ (e) => this.removeTask(task, e) }>x</button>
+                                            <button onClick={ (e) => this.editTas(task, e) }></button> 
+                                            <img src={pencil} alt='pencil'/>
                                             </div>
                                         </li> 
                                     )
@@ -229,3 +237,5 @@ class ToDoList extends React.Component {
 }`
 
 export default Section1;
+
+// https://icons8.com/icon/1057/pencil
