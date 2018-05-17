@@ -43,7 +43,8 @@ class ToDoList extends React.Component {
             tasks: [],
             taskDescription: '',
             formClassName: 'hideForm',
-            newTaskClassName: 'showButton'
+            newTaskClassName: 'showButton',
+            editedTask: 'false'
         } 
     }
 
@@ -70,6 +71,13 @@ class ToDoList extends React.Component {
             newTaskClassName: 'showButton'
         })
         console.log(this.state.tasks)
+    }
+
+    editTask = (e, task) => {
+
+        this.setState({
+            editedTask: 'true'
+        })
     }
 
     removeTask = (task) => {
@@ -111,11 +119,12 @@ class ToDoList extends React.Component {
                                     return (
                                     
                                         <li key={task + index} >
-                                            <div contentEditable={false}>{task}</div>
+                                            <div contentEditable={this.state.editedTask}>{task}</div>
                                             <div>
+                                            <img src={pencil} 
+                                            alt='pencil'
+                                            onClick={ (e) => this.editTask(task, e) }/>    
                                             <button onClick={ (e) => this.removeTask(task, e) }>x</button>
-                                            <button onClick={ (e) => this.editTas(task, e) }></button> 
-                                            <img src={pencil} alt='pencil'/>
                                             </div>
                                         </li> 
                                     )

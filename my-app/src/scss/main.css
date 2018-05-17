@@ -252,14 +252,20 @@ a {
 
 .taskList li > div:last-of-type {
   position: absolute;
-  margin-left: 105px;
-  height: 15%; }
+  margin-left: 90px;
+  height: 13%; }
+
+.taskList img {
+  height: 100%;
+  cursor: pointer; }
 
 .taskList button {
+  height: 100%;
   border: none;
   background: transparent;
-  font-size: 17px;
-  cursor: pointer; }
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-left: 5px; }
 
 .section2 {
   height: 80vh;
