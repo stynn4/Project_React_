@@ -7,6 +7,12 @@ import { Scrollbars } from 'react-custom-scrollbars';
 import pencil from '../img/icons8-pencil-50.png';
 
 
+//section1  =>       TextTyper + EventBox
+//          =>       TextTyper
+//          =>       EventBox => => ToDoList + CodeBox
+//          => =>    TodoList
+//          => =>    CodeBox
+
 class Section1 extends React.Component {
     render(){
         
@@ -39,11 +45,16 @@ class ToDoList extends React.Component {
     constructor(props){
         super(props)
 
+        let counter = 0
         this.state = {
             tasks: [],
-            taskDescription: '',
+            task: {
+                taskDescription: '',
+                id: ''
+            },
             formClassName: 'hideForm',
             newTaskClassName: 'showButton',
+            counter: counter,
             editedTask: 'false'
         } 
     }
@@ -51,32 +62,42 @@ class ToDoList extends React.Component {
     showForm = () => {
         this.setState({
             formClassName: 'showForm',
-            newTaskClassName: 'hideButton'
+            newTaskClassName: 'hideButton',
+            counter: Number(this.state.counter) + 1
         })
     }
 
     handleInput = (e) => {
+        let task = this.state.task
+        
         this.setState({
-            taskDescription: e.target.value
+            task: {
+                taskDescription: e.target.value,
+                id: this.state.counter
+            }
+            
         })  
     }
 
     addNewTask = () => { 
 
-        this.state.tasks.push(this.state.taskDescription)
-
         this.setState({
-            taskDescription: '',
+            task: {
+                taskDescription: this.state.taskDescription,
+                id: this.state.counter
+            },
             formClassName: 'hideForm',
             newTaskClassName: 'showButton'
         })
+       
+        this.state.tasks.push(this.state.task)
         console.log(this.state.tasks)
     }
 
     editTask = (e, task) => {
 
         this.setState({
-            editedTask: 'true'
+            editedTask: 'false'
         })
     }
 
@@ -89,7 +110,7 @@ class ToDoList extends React.Component {
         this.setState({
             tasks: tasksAfterRemove
         })
-       
+        console.log(this.state.tasks)
     }
 
     render(){
@@ -115,11 +136,11 @@ class ToDoList extends React.Component {
                     <Scrollbars>
                         <ul>
                             {
-                                this.state.tasks.map((task, index) => {
+                                this.state.tasks.map((task) => {
                                     return (
                                     
-                                        <li key={task + index} >
-                                            <div contentEditable={this.state.editedTask}>{task}</div>
+                                        <li key={task.id} >
+                                            <div /*contentEditable={this.state.editedTask}*/>{task.taskDescription}</div>
                                             <div>
                                             <img src={pencil} 
                                             alt='pencil'
@@ -127,6 +148,7 @@ class ToDoList extends React.Component {
                                             <button onClick={ (e) => this.removeTask(task, e) }>x</button>
                                             </div>
                                         </li> 
+
                                     )
                                 })
                             }
