@@ -45,7 +45,16 @@ class ToDoList extends React.Component {
     constructor(props){
         super(props)
 
-        let counter = 0
+        counter = localStorage.getItem('counter')
+        tasksFromLclStrg = JSON.parse(localStorage.getItem('TasksArray'))
+
+        let counter = counter
+        let tasksFromLclStrg = tasksFromLclStrg;
+        console.log(tasksFromLclStrg)
+        
+
+        
+
         this.state = {
             tasks: [],
             task: {
@@ -65,6 +74,7 @@ class ToDoList extends React.Component {
             newTaskClassName: 'hideButton',
             counter: Number(this.state.counter) + 1
         })
+        localStorage.setItem('counter', this.state.counter)
     }
 
     handleInput = (e) => {
@@ -74,13 +84,14 @@ class ToDoList extends React.Component {
             task: {
                 taskDescription: e.target.value,
                 id: this.state.counter
-            }
-            
+            }   
         })  
     }
 
     addNewTask = () => { 
 
+        this.state.tasks.push(this.state.task)
+        
         this.setState({
             task: {
                 taskDescription: this.state.taskDescription,
@@ -89,8 +100,7 @@ class ToDoList extends React.Component {
             formClassName: 'hideForm',
             newTaskClassName: 'showButton'
         })
-       
-        this.state.tasks.push(this.state.task)
+        localStorage.setItem('tasksFromLclStrg', JSON.stringify(this.state.tasks))
         console.log(this.state.tasks)
     }
 
@@ -110,7 +120,6 @@ class ToDoList extends React.Component {
         this.setState({
             tasks: tasksAfterRemove
         })
-        console.log(this.state.tasks)
     }
 
     render(){
