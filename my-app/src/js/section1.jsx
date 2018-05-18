@@ -44,19 +44,22 @@ class EventBox extends React.Component {
 class ToDoList extends React.Component {
     constructor(props){
         super(props)
-
+        
         counter = localStorage.getItem('counter')
-        tasksFromLclStrg = JSON.parse(localStorage.getItem('TasksArray'))
-
+        tasks = JSON.parse(localStorage.getItem('tasks'))
+        
+        if(tasks === null){
+            tasks = []
+        } 
+        
         let counter = counter
-        let tasksFromLclStrg = tasksFromLclStrg;
-        console.log(tasksFromLclStrg)
-        
+        let tasks = tasks;
+        console.log(tasks)
+    
 
-        
 
         this.state = {
-            tasks: [],
+            tasks: tasks,
             task: {
                 taskDescription: '',
                 id: ''
@@ -90,17 +93,24 @@ class ToDoList extends React.Component {
 
     addNewTask = () => { 
 
+        
+            let lastElmnt = this.state.tasks.slice(-1)
+            let lastId = lastElmnt[0].id
+            console.log(lastElmnt[0].id)
+        
+        
+
         this.state.tasks.push(this.state.task)
         
         this.setState({
             task: {
                 taskDescription: this.state.taskDescription,
-                id: this.state.counter
+                id: lastId + 1
             },
             formClassName: 'hideForm',
             newTaskClassName: 'showButton'
         })
-        localStorage.setItem('tasksFromLclStrg', JSON.stringify(this.state.tasks))
+        localStorage.setItem('tasks', JSON.stringify(this.state.tasks))
         console.log(this.state.tasks)
     }
 
