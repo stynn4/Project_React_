@@ -52,7 +52,6 @@ class ToDoList extends React.Component {
         let lastId;
 
         if(tasks === null){
-            
             tasks = []
             lastId = 0
         } else {
@@ -60,7 +59,6 @@ class ToDoList extends React.Component {
             lastElmnt = tasks.slice(-1)
             lastId = lastElmnt[0].id
         }
-        
         console.log(tasks)
 
         this.state = {
@@ -127,8 +125,10 @@ class ToDoList extends React.Component {
             tasks: tasksAfterRemove
         })
 
+        let indexToRemove = this.state.tasks.indexOf(task)
+        this.state.tasks.splice(indexToRemove, 1)
         localStorage.setItem('tasks', JSON.stringify(this.state.tasks))
-        //console.log(task)
+        
     }
 
     render(){
