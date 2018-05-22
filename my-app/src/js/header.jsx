@@ -17,7 +17,7 @@ class Header extends React.Component {
                         <NavLink activeStyle={activeStyle} exact to='/'>React</NavLink>
                     </li>
                     <li className='shadow'>
-                        <NavLink activeStyle={activeStyle} to='/section1'>Local Storage?</NavLink>
+                        <NavLink activeStyle={activeStyle} to='/section1'>Local Storage</NavLink>
                     </li>
                     <li className='shadow'>
                         <NavLink activeStyle={activeStyle} to='/section2'>JSON Server</NavLink>
